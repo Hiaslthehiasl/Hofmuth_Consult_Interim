@@ -1,0 +1,955 @@
+<!-- github-deploy: repo=Hofmuth_Consult_Interim target=index.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Matthias Hofmuth · Fractional CHRO & CFO</title>
+<meta name="description" content="Fractional CHRO & CFO für Startups, Ventures und Wachstumsunternehmen. People und Finance aus einer Hand. Augsburg / München.">
+<meta property="og:title" content="Dr. Matthias Hofmuth · Fractional CHRO & CFO">
+<meta property="og:description" content="People und Finance aus einer Hand. Fractional CHRO & CFO für Startups und Ventures.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hofmuth.com">
+<link rel="canonical" href="https://hofmuth.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --petrol: #0D7377;
+  --petrol-light: #e8f4f4;
+  --petrol-mid: #c2e0e1;
+  --text: #111111;
+  --muted: #666666;
+  --border: #e8e8e8;
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --font: 'DM Sans', system-ui, sans-serif;
+  --max: 1100px;
+  --radius: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+
+/* ── COOKIE BANNER ─────────────────────────────────────────────── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #111;
+  color: #fff;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 9999;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+#cookie-banner p { flex: 1; min-width: 200px; color: #ccc; line-height: 1.5; }
+#cookie-banner a { color: var(--petrol-mid); text-decoration: underline; }
+.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.btn-accept {
+  background: var(--petrol);
+  color: #fff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-accept:hover { background: #0a5e62; }
+.btn-decline {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #444;
+  padding: 9px 20px;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-decline:hover { color: #fff; border-color: #888; }
+
+/* ── NAV ────────────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--border);
+  z-index: 100;
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+.nav-logo span { color: var(--petrol); }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 14px;
+  color: var(--muted);
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--petrol);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.nav-cta:hover { background: #0a5e62; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+}
+.nav-mobile {
+  display: none;
+  background: #fff;
+  border-top: 0.5px solid var(--border);
+  padding: 1rem 2rem;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-size: 15px; color: var(--text); padding: 0.4rem 0; }
+
+/* ── HERO ───────────────────────────────────────────────────────── */
+#start {
+  padding: 6rem 2rem 5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--petrol);
+  margin-bottom: 1.25rem;
+}
+.hero-headline {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--text);
+  margin-bottom: 1.75rem;
+}
+.hero-headline strong {
+  font-weight: 600;
+  color: var(--petrol);
+}
+.hero-sub {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--petrol);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.15s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #0a5e62; }
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 400;
+  transition: border-color 0.15s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--petrol); color: var(--petrol); }
+
+/* ── KPI STRIP ──────────────────────────────────────────────────── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 0.5px solid var(--border);
+}
+.kpi {
+  padding: 2rem 1.5rem;
+  border-right: 0.5px solid var(--border);
+  text-align: center;
+}
+.kpi:last-child { border-right: none; }
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+.kpi-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ── SECTIONS ───────────────────────────────────────────────────── */
+section {
+  border-bottom: 0.5px solid var(--border);
+}
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--petrol);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+/* ── LEISTUNGEN ─────────────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.service-card {
+  background: var(--bg-subtle);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.service-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--petrol);
+  margin-bottom: 0.75rem;
+}
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.service-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.service-card ul li {
+  font-size: 13.5px;
+  color: var(--text);
+  padding-left: 1rem;
+  position: relative;
+}
+.service-card ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--petrol);
+}
+
+/* Modi */
+.modi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.modus {
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.modus-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--petrol);
+  background: var(--petrol-light);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.modus h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.modus p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── TICKER ─────────────────────────────────────────────────────── */
+.ticker-section {
+  padding: 1.5rem 0;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  border-bottom: 0.5px solid var(--border);
+}
+.ticker-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 2rem;
+  margin-bottom: 0.75rem;
+}
+.ticker-track {
+  display: flex;
+  gap: 10px;
+  animation: ticker 40s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  background: #fff;
+  border: 0.5px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-investors .ticker-track { animation-duration: 35s; animation-direction: reverse; }
+.ticker-investors { margin-top: 0.75rem; }
+
+/* ── PROFIL ─────────────────────────────────────────────────────── */
+.profil-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+.profil-photo {
+  aspect-ratio: 1;
+  background: var(--bg-subtle);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 280px;
+}
+.profil-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.profil-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.profil-subtitle {
+  font-size: 14px;
+  color: var(--petrol);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+.profil-bio {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  max-width: 520px;
+}
+.profil-bio strong { color: var(--text); font-weight: 500; }
+
+/* ── CALENDLY ───────────────────────────────────────────────────── */
+#kontakt .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 680px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* ── BLOG ───────────────────────────────────────────────────────── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.blog-card {
+  background: var(--bg-subtle);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.blog-card:hover { border-color: var(--petrol); }
+.blog-date { font-size: 12px; color: var(--muted); margin-bottom: 0.6rem; }
+.blog-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; }
+.blog-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.blog-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--petrol);
+  background: var(--petrol-light);
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+/* ── PARTNER ────────────────────────────────────────────────────── */
+.partner-placeholder {
+  background: var(--bg-subtle);
+  border: 0.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 3rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ── LEGAL ──────────────────────────────────────────────────────── */
+.legal-content {
+  max-width: 680px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+}
+.legal-content h2 { font-size: 1.2rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+.legal-content h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+.legal-content p { margin-bottom: 0.75rem; color: var(--muted); }
+.legal-content p strong { color: var(--text); }
+.legal-content a { color: var(--petrol); text-decoration: underline; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer p { font-size: 13px; color: var(--muted); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 13px; color: var(--muted); }
+.footer-links a:hover { color: var(--text); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  
+  #start { padding: 3.5rem 1.5rem 3rem; }
+  .hero-headline { font-size: 2.6rem; }
+  
+  .kpi-strip { grid-template-columns: repeat(3, 1fr); }
+  .kpi:nth-child(3) { border-right: none; }
+  .kpi:nth-child(4), .kpi:nth-child(5) { border-top: 0.5px solid var(--border); }
+  .kpi:nth-child(5) { border-right: none; }
+  
+  .section-inner { padding: 3rem 1.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .modi-grid { grid-template-columns: 1fr; }
+  
+  .profil-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .profil-photo { max-width: 180px; }
+  
+  #kontakt .section-inner { grid-template-columns: 1fr; }
+  .calendly-inline-widget { min-width: 100%; }
+  
+  .blog-grid { grid-template-columns: 1fr; }
+  
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ COOKIE BANNER ══════════════════════════════════════════════ -->
+<div id="cookie-banner" style="display:none;">
+  <p>Diese Website verwendet Google Analytics 4, um die Nutzung anonym zu analysieren. Weitere Informationen in der <a href="#datenschutz">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn-decline" onclick="cookieDecline()">Ablehnen</button>
+    <button class="btn-accept" onclick="cookieAccept()">Akzeptieren</button>
+  </div>
+</div>
+
+<!-- ══ NAV ════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#start" class="nav-logo">Hofmuth<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#profil">Über mich</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Gespräch vereinbaren</a>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#leistungen" onclick="closeMenu()">Leistungen</a>
+    <a href="#profil" onclick="closeMenu()">Über mich</a>
+    <a href="#blog" onclick="closeMenu()">Blog</a>
+    <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+    <a href="#kontakt" class="btn-primary" style="text-align:center;margin-top:0.5rem;" onclick="closeMenu()">Gespräch vereinbaren</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
+<div id="start">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Fractional CHRO &amp; CFO</p>
+    <h1 class="hero-headline">People.<br>Figures.<br><strong>Impact.</strong></h1>
+    <p class="hero-sub">Ich baue und entwickle Teams, Führungskräfte und Organisationen – in Wachstumsphasen genauso wie in Restrukturierungen.</p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn-primary">Erstgespräch vereinbaren</a>
+      <a href="cv-matthias-hofmuth.pdf" class="btn-secondary" download>CV herunterladen</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ KPI STRIP ══════════════════════════════════════════════════ -->
+<div class="kpi-strip">
+  <div class="kpi">
+    <div class="kpi-value">1.600+</div>
+    <div class="kpi-label">FTE skaliert</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">750+</div>
+    <div class="kpi-label">Hires pro Jahr</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">16+</div>
+    <div class="kpi-label">Länder</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">10+</div>
+    <div class="kpi-label">Ventures begleitet</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">3+</div>
+    <div class="kpi-label">Finanzierungs&shy;runden begleitet</div>
+  </div>
+</div>
+
+<!-- ══ LEISTUNGEN ═════════════════════════════════════════════════ -->
+<section id="leistungen">
+  <div class="section-inner">
+    <p class="section-label">Leistungen</p>
+    <h2 class="section-title">People und Finance aus einer Hand.</h2>
+    <p class="section-sub">Zwei Funktionen, ein Gesprächspartner. Kein Übergabeaufwand zwischen HR und Finance.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <p class="service-card-label">Fractional CHRO</p>
+        <h3>People &amp; Organisation</h3>
+        <p>Vom Aufbau der HR-Funktion bis zur Führungskräfteentwicklung in Hyperwachstum und Restrukturierung.</p>
+        <ul>
+          <li>Aufbau &amp; Skalierung von People-Funktionen</li>
+          <li>High-Volume Hiring &amp; Talent Acquisition</li>
+          <li>Leadership Development</li>
+          <li>People Analytics &amp; HRIS-Implementierung</li>
+          <li>Betriebsrat &amp; Arbeitnehmervertretung</li>
+          <li>Internationales HR (16+ Länder)</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <p class="service-card-label">Fractional CFO</p>
+        <h3>Finance &amp; Business Partnering</h3>
+        <p>Finance als strategischer Partner – nicht als Kontrollinstanz. Struktur, Klarheit und Entscheidungsgrundlagen.</p>
+        <ul>
+          <li>Aufbau von Finance- &amp; Controllingstrukturen</li>
+          <li>Budgetierung, Forecasting, Reporting</li>
+          <li>Finanzierungsrunden &amp; Investor Relations</li>
+          <li>Effizienzprogramme &amp; Restrukturierung</li>
+          <li>B2C→B2B-Pivots &amp; Reorganisation</li>
+          <li>Finance als Business Partner</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modi-grid">
+      <div class="modus">
+        <span class="modus-tag">Wachstum</span>
+        <h4>Wenn Struktur der Geschwindigkeit hinterherläuft</h4>
+        <p>Skalierung von Teams, Prozessen und Systemen – ohne die Organisation zu bremsen.</p>
+      </div>
+      <div class="modus">
+        <span class="modus-tag">Wandel</span>
+        <h4>Wenn Richtung und Organisation neu ausgerichtet werden müssen</h4>
+        <p>Pivots, Reorganisationen und Restrukturierungen, die funktionieren.</p>
+      </div>
+      <div class="modus">
+        <span class="modus-tag">Organisation</span>
+        <h4>Wenn operative Exzellenz entscheidend wird</h4>
+        <p>Strukturen, die dauerhaft tragen – nicht nur für den nächsten Meilenstein.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ═════════════════════════════════════════════════════ -->
+<div class="ticker-section">
+  <p class="ticker-label">Ventures</p>
+  <div class="ticker-track" id="ventures-track"></div>
+  <p class="ticker-label ticker-investors" style="margin-top:1.25rem;">Investoren</p>
+  <div class="ticker-track ticker-investors" id="investors-track"></div>
+</div>
+
+<!-- ══ PROFIL ═════════════════════════════════════════════════════ -->
+<section id="profil">
+  <div class="section-inner">
+    <div class="profil-inner">
+      <div>
+        <div class="profil-photo" id="profil-photo">
+          <img src="foto.jpg" alt="Dr. Matthias Hofmuth">
+        </div>
+      </div>
+      <div>
+        <p class="section-label">Über mich</p>
+        <h2 class="profil-name">Dr. Matthias Hofmuth</h2>
+        <p class="profil-subtitle">Fractional CHRO &amp; CFO · Augsburg</p>
+        <p class="profil-bio">
+          Ich baue und entwickle Teams, Führungskräfte und Organisationen – in Wachstumsphasen genauso wie in Restrukturierungen. <strong>Als CHRO bringe ich einen klaren Blick auf Zahlen mit. Als CFO einen klaren Blick auf Menschen.</strong>
+        </p>
+        <a href="cv-matthias-hofmuth.pdf" class="btn-secondary" download>CV herunterladen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KONTAKT / CALENDLY ═════════════════════════════════════════ -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div>
+      <p class="section-label">Kontakt</p>
+      <h2 class="section-title">Interesse?</h2>
+      <p class="section-sub">Kein Formular, kein Funnel. Einfach einen Termin nehmen und direkt sprechen.</p>
+      <p style="font-size:15px;margin-bottom:0.5rem;">
+        <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);font-weight:500;">matthias@hofmuth.com</a>
+      </p>
+      <p style="font-size:14px;color:var(--muted);">linkedin.com/in/<a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener" style="color:var(--petrol);">matthias-hofmuth</a></p>
+    </div>
+    <div id="calendly-container">
+      <!-- Calendly wird erst nach Cookie-Zustimmung geladen -->
+      <div id="calendly-placeholder" style="background:var(--bg-subtle);border:0.5px solid var(--border);border-radius:var(--radius);height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;text-align:center;padding:2rem;">
+        <p style="color:var(--muted);font-size:14px;max-width:280px;">Das Terminbuchungs-Widget lädt nach der Cookie-Zustimmung.</p>
+        <a href="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch" target="_blank" rel="noopener" class="btn-primary">Direkt zu Calendly →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ═══════════════════════════════════════════════════════ -->
+<section id="blog">
+  <div class="section-inner">
+    <p class="section-label">Blog</p>
+    <h2 class="section-title">Gedanken aus der Praxis.</h2>
+    <p class="section-sub">Keine Ratgeber-Artikel. Erfahrungen aus Mandaten, die ich für relevant halte.</p>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="blog-tag">CHRO</span>
+        <p class="blog-date">Demnächst</p>
+        <h3>Warum High-Volume Hiring kein Skalierungsproblem ist</h3>
+        <p>750 Hires pro Jahr sind keine Mengenaufgabe. Sie sind eine Qualitätsaufgabe unter Zeitdruck.</p>
+      </div>
+      <div class="blog-card">
+        <span class="blog-tag">CFO</span>
+        <p class="blog-date">Demnächst</p>
+        <h3>Finance als Business Partner: Was das wirklich bedeutet</h3>
+        <p>Der Unterschied zwischen einem CFO, der Zahlen liefert, und einem, der Entscheidungen ermöglicht.</p>
+      </div>
+      <div class="blog-card">
+        <span class="blog-tag">Organisation</span>
+        <p class="blog-date">Demnächst</p>
+        <h3>Struktur fühlt sich wie Bürokratie an – bis sie fehlt</h3>
+        <p>Warum Founders Struktur ablehnen, bis die fehlende Struktur teurer wird als die Einführung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPRESSUM ══════════════════════════════════════════════════ -->
+<section id="impressum">
+  <div class="section-inner">
+    <p class="section-label">Rechtliches</p>
+    <h2 class="section-title">Impressum</h2>
+    <div class="legal-content">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        <strong>Dr. Matthias Hofmuth</strong><br>
+        Hofmuth: Consult &amp; Interim<br>
+        Nebelhornstr. 80<br>
+        86163 Augsburg
+      </p>
+      <h3>Kontakt</h3>
+      <p>
+        E-Mail: <a href="mailto:matthias@hofmuth.com">matthias@hofmuth.com</a>
+      </p>
+      <h3>Umsatzsteuer-Identifikationsnummer</h3>
+      <p>USt-IdNr.: DE454324924</p>
+      <h3>Berufsbezeichnung</h3>
+      <p>Unternehmensberater / Interim Manager (Deutschland)</p>
+      <h3>Haftung für Inhalte</h3>
+      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+      <h3>Haftung für Links</h3>
+      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+      <h3>Urheberrecht</h3>
+      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DATENSCHUTZ ════════════════════════════════════════════════ -->
+<section id="datenschutz">
+  <div class="section-inner">
+    <p class="section-label">Rechtliches</p>
+    <h2 class="section-title">Datenschutzerklärung</h2>
+    <div class="legal-content">
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlicher im Sinne der DSGVO ist: Dr. Matthias Hofmuth, Hofmuth: Consult &amp; Interim, Nebelhornstr. 80, 86163 Augsburg, E-Mail: matthias@hofmuth.com</p>
+
+      <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+      <p>Diese Website erhebt beim Aufruf automatisch technische Verbindungsdaten (IP-Adresse, Browsertyp, Uhrzeit). Diese Daten werden zur Sicherstellung des Betriebs verarbeitet und nicht mit personenbezogenen Daten zusammengeführt.</p>
+
+      <h2>3. Google Analytics 4</h2>
+      <p>Diese Website nutzt Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) zur anonymisierten Analyse der Websitenutzung. Google Analytics wird nur nach Ihrer ausdrücklichen Einwilligung geladen (Art. 6 Abs. 1 lit. a DSGVO). Die IP-Anonymisierung ist aktiviert. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie den Cookie-Banner erneut aufrufen oder in den Browser-Einstellungen lokale Daten löschen. Informationen zu den Nutzungsbedingungen und Datenschutz bei Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h2>4. Calendly</h2>
+      <p>Für die Terminvereinbarung nutzen wir Calendly (Calendly LLC, 271 17th St NW, Atlanta, GA 30363, USA). Das Widget wird nur nach Cookie-Zustimmung eingebettet. Bei der Terminbuchung gelten die <a href="https://calendly.com/privacy" target="_blank" rel="noopener">Datenschutzrichtlinien von Calendly</a>.</p>
+
+      <h2>5. Ihre Rechte</h2>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Wenden Sie sich dazu an: <a href="mailto:matthias@hofmuth.com">matthias@hofmuth.com</a>. Außerdem haben Sie das Recht, sich beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA) zu beschweren.</p>
+
+      <h2>6. Cookies</h2>
+      <p>Diese Website setzt nur technisch notwendige Cookies sowie – nach Ihrer Einwilligung – Analytics-Cookies von Google. Sie können Ihre Einwilligung jederzeit widerrufen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Dr. Matthias Hofmuth · Hofmuth: Consult &amp; Interim</p>
+    <div class="footer-links">
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+      <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════════ -->
+<script>
+// ─ Ticker ──────────────────────────────────────────────────────────
+const ventures = ["Flix","xentral","Temedica","Joby Aviation","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up"];
+const investors = ["Sequoia Capital","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic"];
+
+function buildTicker(el, items) {
+  const doubled = [...items, ...items];
+  el.innerHTML = doubled.map(i => `<span class="ticker-item">${i}</span>`).join('');
+}
+buildTicker(document.getElementById('ventures-track'), ventures);
+buildTicker(document.getElementById('investors-track'), investors);
+
+// ─ Nav hamburger ───────────────────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('nav-mobile').classList.remove('open');
+}
+
+// ─ Cookie Consent ──────────────────────────────────────────────────
+const GA_ID = 'G-9XCS8ZG85Q';
+const CONSENT_KEY = 'hm_cookie_consent';
+
+function cookieAccept() {
+  localStorage.setItem(CONSENT_KEY, 'accepted');
+  hideBanner();
+  loadGA();
+  loadCalendly();
+}
+function cookieDecline() {
+  localStorage.setItem(CONSENT_KEY, 'declined');
+  hideBanner();
+}
+function hideBanner() {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function loadGA() {
+  if (window._gaLoaded) return;
+  window._gaLoaded = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+}
+
+function loadCalendly() {
+  if (window._calendlyLoaded) return;
+  window._calendlyLoaded = true;
+  const placeholder = document.getElementById('calendly-placeholder');
+  if (!placeholder) return;
+  // Load Calendly CSS
+  const css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = 'https://assets.calendly.com/assets/external/widget.css';
+  document.head.appendChild(css);
+  // Replace placeholder with widget
+  placeholder.outerHTML = '<div class="calendly-inline-widget" data-url="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:680px;"></div>';
+  // Load Calendly JS
+  const s = document.createElement('script');
+  s.src = 'https://assets.calendly.com/assets/external/widget.js';
+  document.body.appendChild(s);
+}
+
+// ─ Init ────────────────────────────────────────────────────────────
+(function init() {
+  const consent = localStorage.getItem(CONSENT_KEY);
+  if (consent === 'accepted') {
+    loadGA();
+    loadCalendly();
+  } else if (consent === 'declined') {
+    // No banner, no tracking
+  } else {
+    // Show banner after short delay
+    setTimeout(() => {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }, 800);
+  }
+})();
+</script>
+</body>
+</html>
