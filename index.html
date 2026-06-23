@@ -693,7 +693,7 @@ footer p { font-size: 13px; color: var(--muted); }
     <div class="kpi-label">Ventures geprägt</div>
   </div>
   <div class="kpi">
-    <div class="kpi-value">3+</div>
+    <div class="kpi-value">5+</div>
     <div class="kpi-label">Finanzierungs&shy;runden abgeschlossen</div>
   </div>
 </div>
@@ -703,7 +703,7 @@ footer p { font-size: 13px; color: var(--muted); }
   <div class="section-inner">
     <p class="section-label">Leistungen</p>
     <h2 class="section-title">People und Finance aus einer Hand.</h2>
-    <p class="section-sub">Zwei Funktionen, ein Gesprächspartner. Kein Übergabeaufwand zwischen HR und Finance.</p>
+    <p class="section-sub">Operational Excellence, ambitionierte Ziele, Motor und Treiber von Wachstum und Change.</p>
 
     <div class="services-grid">
       <div class="service-card">
@@ -794,7 +794,7 @@ footer p { font-size: 13px; color: var(--muted); }
     <div>
       <p class="section-label">Kontakt</p>
       <h2 class="section-title">Interesse?</h2>
-      <p class="section-sub">Kein Formular, kein Funnel. Einfach einen Termin nehmen und direkt sprechen.</p>
+      <p class="section-sub">Dann lass uns sprechen. Schreib mir eine Nachricht oder buch Dir direkt einen passenden Termin.</p>
       <p style="font-size:15px;margin-bottom:0.5rem;">
         <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);font-weight:500;">matthias@hofmuth.com</a>
       </p>
@@ -803,10 +803,10 @@ footer p { font-size: 13px; color: var(--muted); }
       </p>
     </div>
     <div id="calendly-container">
-      <!-- Calendly wird erst nach Cookie-Zustimmung geladen -->
-      <div id="calendly-placeholder" style="background:var(--bg-subtle);border:0.5px solid var(--border);border-radius:var(--radius);height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;text-align:center;padding:2rem;">
-        <p style="color:var(--muted);font-size:14px;max-width:280px;">Das Terminbuchungs-Widget lädt nach der Cookie-Zustimmung.</p>
-        <a href="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch" target="_blank" rel="noopener" class="btn-primary">Direkt zu Calendly →</a>
+      <div id="calendly-placeholder" style="background:var(--bg-subtle);border:0.5px solid var(--border);border-radius:var(--radius);min-height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;text-align:center;padding:2.5rem;">
+        <p style="color:var(--muted);font-size:14px;max-width:300px;line-height:1.6;">Terminbuchung direkt über Calendly – öffnet in einem neuen Tab.</p>
+        <a href="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch" target="_blank" rel="noopener" class="btn-primary">Termin buchen →</a>
+        <p style="color:var(--muted);font-size:12px;max-width:280px;">Nach Klick auf „Termin buchen" gelten die <a href="https://calendly.com/privacy" target="_blank" rel="noopener" style="color:var(--petrol);">Datenschutzrichtlinien von Calendly</a>.</p>
       </div>
     </div>
   </div>
@@ -884,7 +884,6 @@ function cookieAccept() {
   localStorage.setItem(CONSENT_KEY, 'accepted');
   hideBanner();
   loadGA();
-  loadCalendly();
 }
 function cookieDecline() {
   localStorage.setItem(CONSENT_KEY, 'declined');
@@ -908,34 +907,14 @@ function loadGA() {
   gtag('config', GA_ID, { anonymize_ip: true });
 }
 
-function loadCalendly() {
-  if (window._calendlyLoaded) return;
-  window._calendlyLoaded = true;
-  const placeholder = document.getElementById('calendly-placeholder');
-  if (!placeholder) return;
-  // Load Calendly CSS
-  const css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = 'https://assets.calendly.com/assets/external/widget.css';
-  document.head.appendChild(css);
-  // Replace placeholder with widget
-  placeholder.outerHTML = '<div class="calendly-inline-widget" data-url="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:680px;"></div>';
-  // Load Calendly JS
-  const s = document.createElement('script');
-  s.src = 'https://assets.calendly.com/assets/external/widget.js';
-  document.body.appendChild(s);
-}
-
 // ─ Init ────────────────────────────────────────────────────────────
 (function init() {
   const consent = localStorage.getItem(CONSENT_KEY);
   if (consent === 'accepted') {
     loadGA();
-    loadCalendly();
   } else if (consent === 'declined') {
-    // No banner, no tracking
+    // No tracking
   } else {
-    // Show banner after short delay
     setTimeout(() => {
       document.getElementById('cookie-banner').style.display = 'flex';
     }, 800);
