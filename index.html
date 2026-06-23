@@ -402,7 +402,7 @@ section {
 .ticker-track {
   display: flex;
   gap: 10px;
-  animation: ticker 50s linear infinite;
+  animation: ticker 80s linear infinite;
   will-change: transform;
   width: max-content;
 }
@@ -432,14 +432,10 @@ section {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-@keyframes ticker-rev {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
 .ticker-track-rev {
   display: flex;
   gap: 10px;
-  animation: ticker-rev 45s linear infinite;
+  animation: ticker 80s linear infinite;
   will-change: transform;
   width: max-content;
 }
