@@ -371,9 +371,14 @@ section {
 
 /* ── TICKER ─────────────────────────────────────────────────────── */
 .ticker-section {
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   overflow: hidden;
-  background: var(--bg-subtle);
+  border-bottom: 0.5px solid var(--border);
+}
+.ticker-section-investors {
+  padding: 1.25rem 0;
+  overflow: hidden;
+  background: var(--petrol);
   border-bottom: 0.5px solid var(--border);
 }
 .ticker-label {
@@ -385,33 +390,62 @@ section {
   padding: 0 2rem;
   margin-bottom: 0.75rem;
 }
+.ticker-label-inv {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  padding: 0 2rem;
+  margin-bottom: 0.75rem;
+}
 .ticker-track {
   display: flex;
   gap: 10px;
-  animation: ticker 40s linear infinite;
+  animation: ticker 50s linear infinite;
   will-change: transform;
   width: max-content;
 }
-.ticker-track:hover { animation-play-state: paused; }
 .ticker-item {
   flex-shrink: 0;
   font-size: 13px;
   font-weight: 500;
-  color: #555;
-  background: #fff;
-  border: 0.5px solid var(--border);
-  padding: 6px 16px;
+  color: var(--petrol);
+  background: var(--petrol-light);
+  border: 0.5px solid var(--petrol-mid);
+  padding: 5px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.ticker-item-inv {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  border: 0.5px solid rgba(255,255,255,0.3);
+  padding: 5px 16px;
   border-radius: 20px;
   white-space: nowrap;
 }
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-.ticker-investors .ticker-track { animation-duration: 35s; animation-direction: reverse; }
-.ticker-investors { margin-top: 0.75rem; }
-
-/* ── PROFIL ─────────────────────────────────────────────────────── */
+@keyframes ticker-rev {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.ticker-track-rev {
+  display: flex;
+  gap: 10px;
+  animation: ticker-rev 45s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .ticker-track-rev { animation: none; }
+}
 .profil-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -656,11 +690,11 @@ footer p { font-size: 13px; color: var(--muted); }
   </div>
   <div class="kpi">
     <div class="kpi-value">10+</div>
-    <div class="kpi-label">Ventures begleitet</div>
+    <div class="kpi-label">Ventures geprägt</div>
   </div>
   <div class="kpi">
     <div class="kpi-value">3+</div>
-    <div class="kpi-label">Finanzierungs&shy;runden begleitet</div>
+    <div class="kpi-label">Finanzierungs&shy;runden abgeschlossen</div>
   </div>
 </div>
 
@@ -720,12 +754,10 @@ footer p { font-size: 13px; color: var(--muted); }
   </div>
 </section>
 
-<!-- ══ TICKER ═════════════════════════════════════════════════════ -->
+<!-- ══ TICKER VENTURES (nach Leistungen) ══════════════════════════ -->
 <div class="ticker-section">
   <p class="ticker-label">Ventures</p>
   <div class="ticker-track" id="ventures-track"></div>
-  <p class="ticker-label ticker-investors" style="margin-top:1.25rem;">Investoren</p>
-  <div class="ticker-track ticker-investors" id="investors-track"></div>
 </div>
 
 <!-- ══ PROFIL ═════════════════════════════════════════════════════ -->
@@ -750,6 +782,12 @@ footer p { font-size: 13px; color: var(--muted); }
   </div>
 </section>
 
+<!-- ══ TICKER INVESTOREN (nach Profil) ════════════════════════════ -->
+<div class="ticker-section-investors">
+  <p class="ticker-label-inv">Investoren</p>
+  <div class="ticker-track-rev" id="investors-track"></div>
+</div>
+
 <!-- ══ KONTAKT / CALENDLY ═════════════════════════════════════════ -->
 <section id="kontakt">
   <div class="section-inner">
@@ -760,7 +798,9 @@ footer p { font-size: 13px; color: var(--muted); }
       <p style="font-size:15px;margin-bottom:0.5rem;">
         <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);font-weight:500;">matthias@hofmuth.com</a>
       </p>
-      <p style="font-size:14px;color:var(--muted);">linkedin.com/in/<a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener" style="color:var(--petrol);">matthias-hofmuth</a></p>
+      <p style="font-size:14px;color:var(--muted);">
+        <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener" style="color:var(--petrol);">linkedin.com/in/matthias-hofmuth</a>
+      </p>
     </div>
     <div id="calendly-container">
       <!-- Calendly wird erst nach Cookie-Zustimmung geladen -->
@@ -802,71 +842,13 @@ footer p { font-size: 13px; color: var(--muted); }
   </div>
 </section>
 
-<!-- ══ IMPRESSUM ══════════════════════════════════════════════════ -->
-<section id="impressum">
-  <div class="section-inner">
-    <p class="section-label">Rechtliches</p>
-    <h2 class="section-title">Impressum</h2>
-    <div class="legal-content">
-      <h2>Angaben gemäß § 5 TMG</h2>
-      <p>
-        <strong>Dr. Matthias Hofmuth</strong><br>
-        Hofmuth: Consult &amp; Interim<br>
-        Nebelhornstr. 80<br>
-        86163 Augsburg
-      </p>
-      <h3>Kontakt</h3>
-      <p>
-        E-Mail: <a href="mailto:matthias@hofmuth.com">matthias@hofmuth.com</a>
-      </p>
-      <h3>Umsatzsteuer-Identifikationsnummer</h3>
-      <p>USt-IdNr.: DE454324924</p>
-      <h3>Berufsbezeichnung</h3>
-      <p>Unternehmensberater / Interim Manager (Deutschland)</p>
-      <h3>Haftung für Inhalte</h3>
-      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
-      <h3>Haftung für Links</h3>
-      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-      <h3>Urheberrecht</h3>
-      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ DATENSCHUTZ ════════════════════════════════════════════════ -->
-<section id="datenschutz">
-  <div class="section-inner">
-    <p class="section-label">Rechtliches</p>
-    <h2 class="section-title">Datenschutzerklärung</h2>
-    <div class="legal-content">
-      <h2>1. Verantwortlicher</h2>
-      <p>Verantwortlicher im Sinne der DSGVO ist: Dr. Matthias Hofmuth, Hofmuth: Consult &amp; Interim, Nebelhornstr. 80, 86163 Augsburg, E-Mail: matthias@hofmuth.com</p>
-
-      <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
-      <p>Diese Website erhebt beim Aufruf automatisch technische Verbindungsdaten (IP-Adresse, Browsertyp, Uhrzeit). Diese Daten werden zur Sicherstellung des Betriebs verarbeitet und nicht mit personenbezogenen Daten zusammengeführt.</p>
-
-      <h2>3. Google Analytics 4</h2>
-      <p>Diese Website nutzt Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) zur anonymisierten Analyse der Websitenutzung. Google Analytics wird nur nach Ihrer ausdrücklichen Einwilligung geladen (Art. 6 Abs. 1 lit. a DSGVO). Die IP-Anonymisierung ist aktiviert. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie den Cookie-Banner erneut aufrufen oder in den Browser-Einstellungen lokale Daten löschen. Informationen zu den Nutzungsbedingungen und Datenschutz bei Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
-
-      <h2>4. Calendly</h2>
-      <p>Für die Terminvereinbarung nutzen wir Calendly (Calendly LLC, 271 17th St NW, Atlanta, GA 30363, USA). Das Widget wird nur nach Cookie-Zustimmung eingebettet. Bei der Terminbuchung gelten die <a href="https://calendly.com/privacy" target="_blank" rel="noopener">Datenschutzrichtlinien von Calendly</a>.</p>
-
-      <h2>5. Ihre Rechte</h2>
-      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Wenden Sie sich dazu an: <a href="mailto:matthias@hofmuth.com">matthias@hofmuth.com</a>. Außerdem haben Sie das Recht, sich beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA) zu beschweren.</p>
-
-      <h2>6. Cookies</h2>
-      <p>Diese Website setzt nur technisch notwendige Cookies sowie – nach Ihrer Einwilligung – Analytics-Cookies von Google. Sie können Ihre Einwilligung jederzeit widerrufen.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <p>© 2026 Dr. Matthias Hofmuth · Hofmuth: Consult &amp; Interim</p>
     <div class="footer-links">
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
       <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
@@ -878,12 +860,13 @@ footer p { font-size: 13px; color: var(--muted); }
 const ventures = ["Flix","xentral","Temedica","Joby Aviation","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up"];
 const investors = ["Sequoia Capital","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic"];
 
-function buildTicker(el, items) {
-  const doubled = [...items, ...items];
-  el.innerHTML = doubled.map(i => `<span class="ticker-item">${i}</span>`).join('');
+function buildTicker(el, items, cls) {
+  // Quadruplizieren für nahtlose Endlosschleife
+  const all = [...items, ...items, ...items, ...items];
+  el.innerHTML = all.map(i => `<span class="${cls}">${i}</span>`).join('');
 }
-buildTicker(document.getElementById('ventures-track'), ventures);
-buildTicker(document.getElementById('investors-track'), investors);
+buildTicker(document.getElementById('ventures-track'), ventures, 'ticker-item');
+buildTicker(document.getElementById('investors-track'), investors, 'ticker-item-inv');
 
 // ─ Nav hamburger ───────────────────────────────────────────────────
 function toggleMenu() {
