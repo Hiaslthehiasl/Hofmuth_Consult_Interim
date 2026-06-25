@@ -1,952 +1,762 @@
 <!-- github-deploy: repo=Hofmuth_Consult_Interim target=index.html -->
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Matthias Hofmuth · Fractional CHRO & CFO</title>
-<meta name="description" content="Fractional CHRO & CFO für Startups, Ventures und Wachstumsunternehmen. People und Finance aus einer Hand. München.">
-<meta property="og:title" content="Dr. Matthias Hofmuth · Fractional CHRO & CFO">
-<meta property="og:description" content="People und Finance aus einer Hand. Fractional CHRO & CFO für Startups und Ventures.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hofmuth.com">
-<link rel="canonical" href="https://hofmuth.com">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 42'><rect x='0' y='4' width='17' height='17' rx='3' fill='%230D7377' opacity='.2'/><rect x='21' y='4' width='17' height='17' rx='3' fill='%230D7377' opacity='.5'/><rect x='0' y='25' width='17' height='17' rx='3' fill='%230D7377' opacity='.5'/><rect x='21' y='25' width='17' height='17' rx='3' fill='%230D7377'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Matthias Hofmuth – Fractional CHRO & CFO</title>
+  <meta name="description" content="Fractional CHRO und CFO für Startups, VCs und Ventures. Hiring, Leadership Development, Operational Excellence. Augsburg / München.">
+  <meta name="author" content="Dr. Matthias Hofmuth">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hofmuth.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://hofmuth.com/">
+  <meta property="og:title"       content="Dr. Matthias Hofmuth – Fractional CHRO & CFO">
+  <meta property="og:description" content="Fractional CHRO und CFO für Startups, VCs und Ventures. Hiring, Leadership Development, Operational Excellence.">
+  <meta property="og:image"       content="https://hofmuth.com/assets/og-image.png">
+  <meta property="og:locale"      content="de_DE">
+  <meta property="og:locale:alternate" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Dr. Matthias Hofmuth – Fractional CHRO & CFO">
+  <meta name="twitter:description" content="Fractional CHRO und CFO für Startups, VCs und Ventures.">
+  <meta name="twitter:image"       content="https://hofmuth.com/assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='14' height='14' x='1' y='1' rx='2' fill='%230D7377'/><rect width='14' height='14' x='17' y='1' rx='2' fill='%230D7377' opacity='.6'/><rect width='14' height='14' x='1' y='17' rx='2' fill='%230D7377' opacity='.4'/><rect width='14' height='14' x='17' y='17' rx='2' fill='%230D7377' opacity='.2'/></svg>">
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XCS8ZG85Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    // Only fire after consent
+    window._ga_consent = false;
+    function initGA() {
+      if (window._ga_consent) return;
+      window._ga_consent = true;
+      gtag('config', 'G-9XCS8ZG85Q', { anonymize_ip: true });
+    }
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Matthias Hofmuth",
+    "jobTitle": "Fractional CHRO & CFO",
+    "url": "https://hofmuth.com",
+    "email": "matthias@hofmuth.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Augsburg",
+      "addressCountry": "DE"
+    },
+    "sameAs": ["https://linkedin.com/in/matthias-hofmuth"]
+  }
+  </script>
 
 <style>
-:root {
-  --petrol: #0D7377;
-  --petrol-light: #e8f4f4;
-  --petrol-mid: #c2e0e1;
-  --text: #111111;
-  --muted: #666666;
-  --border: #e8e8e8;
-  --bg: #ffffff;
-  --bg-subtle: #fafafa;
-  --font: 'DM Sans', system-ui, sans-serif;
-  --max: 1100px;
-  --radius: 6px;
-}
-
+/* ── Reset & Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+:root {
+  --petrol:       #0D7377;
+  --petrol-light: #E6F4F4;
+  --black:        #111111;
+  --muted:        #888888;
+  --border:       #E8E8E8;
+  --bg:           #FAFAFA;
+  --white:        #FFFFFF;
+  --font:         'DM Sans', system-ui, sans-serif;
+  --max-w:        880px;
+}
 html { scroll-behavior: smooth; }
-
 body {
   font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
+  color: var(--black);
+  background: var(--white);
+  font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+.container { max-width: var(--max-w); margin: 0 auto; }
 
-/* ── COOKIE BANNER ─────────────────────────────────────────────── */
-#cookie-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: #111;
-  color: #fff;
-  padding: 1.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  z-index: 9999;
-  font-size: 14px;
-  flex-wrap: wrap;
-}
-#cookie-banner p { flex: 1; min-width: 200px; color: #ccc; line-height: 1.5; }
-#cookie-banner a { color: var(--petrol-mid); text-decoration: underline; }
-.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
-.btn-accept {
-  background: var(--petrol);
-  color: #fff;
-  border: none;
-  padding: 9px 20px;
-  border-radius: var(--radius);
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.btn-accept:hover { background: #0a5e62; }
-.btn-decline {
-  background: transparent;
-  color: #aaa;
-  border: 1px solid #444;
-  padding: 9px 20px;
-  border-radius: var(--radius);
-  font-family: var(--font);
-  font-size: 14px;
-  cursor: pointer;
-}
-.btn-decline:hover { color: #fff; border-color: #888; }
-
-/* ── NAV ────────────────────────────────────────────────────────── */
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(8px);
+/* ── Nav ──────────────────────────────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--white);
   border-bottom: 0.5px solid var(--border);
-  z-index: 100;
-  padding: 0 2rem;
 }
 .nav-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 2rem;
 }
-.nav-logo {
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
-  color: var(--text);
-}
-.nav-logo span { color: var(--petrol); }
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  font-size: 14px;
-  color: var(--muted);
-}
-.nav-links a:hover { color: var(--text); }
+.nav-logo { font-weight: 700; font-size: 17px; letter-spacing: -0.03em; cursor: pointer; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--muted); transition: color 0.15s; }
+.nav-links a:hover,
+.nav-links a.active { color: var(--petrol); font-weight: 500; }
 .nav-cta {
-  background: var(--petrol);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: var(--radius);
-  font-size: 14px;
-  font-weight: 500;
-  transition: background 0.15s;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 20px; border-radius: 8px;
+  background: var(--petrol); color: var(--white);
+  transition: opacity 0.15s;
 }
-.nav-cta:hover { background: #0a5e62; }
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
+.nav-cta:hover { opacity: 0.88; }
+.nav-lang {
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  cursor: pointer; border: 0.5px solid var(--border);
+  padding: 4px 10px; border-radius: 6px;
+  transition: color 0.15s, border-color 0.15s;
 }
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--text);
+.nav-lang:hover { color: var(--petrol); border-color: var(--petrol); }
+.nav-right { display: flex; gap: 10px; align-items: center; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
 }
-.nav-mobile {
-  display: none;
-  background: #fff;
-  border-top: 0.5px solid var(--border);
-  padding: 1rem 2rem;
-  flex-direction: column;
-  gap: 0.75rem;
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); border-radius: 1px; }
+.mobile-menu {
+  display: none; flex-direction: column;
+  background: var(--white); border-bottom: 0.5px solid var(--border);
+  max-width: var(--max-w); margin: 0 auto;
 }
-.nav-mobile.open { display: flex; }
-.nav-mobile a { font-size: 15px; color: var(--text); padding: 0.4rem 0; }
+.mobile-menu.open { display: flex; }
+.mobile-link {
+  padding: 1rem 2rem; font-size: 15px; color: var(--black);
+  border-bottom: 0.5px solid var(--border); cursor: pointer;
+}
+.mobile-link:last-child { border-bottom: none; }
 
-/* ── HERO ───────────────────────────────────────────────────────── */
-#start {
-  padding: 6rem 2rem 5rem;
-  border-bottom: 0.5px solid var(--border);
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+.section { padding: 3rem 2rem; border-bottom: 0.5px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
+.sec-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.75rem;
 }
-.hero-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.hero { padding: 5rem 2rem 4rem; border-bottom: 0.5px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
 .hero-eyebrow {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--petrol);
-  margin-bottom: 1.25rem;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.5rem;
 }
 .hero-headline {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  color: var(--text);
-  margin-bottom: 1.75rem;
+  font-size: clamp(40px, 6vw, 62px);
+  font-weight: 700; line-height: 1.0;
+  letter-spacing: -0.04em; margin-bottom: 2.25rem;
 }
-.hero-headline strong {
-  font-weight: 600;
-  color: var(--petrol);
+.hero-headline .accent { color: var(--petrol); }
+.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2.75rem; }
+.pill {
+  font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 100px;
+  border: 0.5px solid #ddd; color: #666;
+  transition: all 0.15s;
 }
-.hero-sub {
-  font-size: 1.15rem;
-  font-weight: 300;
-  color: var(--muted);
-  max-width: 560px;
-  line-height: 1.65;
-  margin-bottom: 2.5rem;
+.pill.active { background: var(--petrol); color: var(--white); border-color: var(--petrol); }
+.btn {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  padding: 11px 24px; border-radius: 8px;
+  background: var(--petrol); color: var(--white);
+  transition: opacity 0.15s; border: none; cursor: pointer;
+  font-family: var(--font);
 }
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+.btn:hover { opacity: 0.88; }
+.btn-outline {
+  background: transparent; color: var(--petrol);
+  border: 1px solid var(--petrol);
 }
-.btn-primary {
-  background: var(--petrol);
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-weight: 500;
-  transition: background 0.15s;
-  display: inline-block;
-}
-.btn-primary:hover { background: #0a5e62; }
-.btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-weight: 400;
-  transition: border-color 0.15s;
-  display: inline-block;
-}
-.btn-secondary:hover { border-color: var(--petrol); color: var(--petrol); }
+.btn-outline:hover { background: var(--petrol-light); opacity: 1; }
 
-/* ── KPI STRIP ──────────────────────────────────────────────────── */
+/* ── KPI Strip ────────────────────────────────────────────────────────────── */
 .kpi-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   border-bottom: 0.5px solid var(--border);
+  max-width: var(--max-w); margin: 0 auto;
 }
-.kpi {
-  padding: 2rem 1.5rem;
-  border-right: 0.5px solid var(--border);
-  text-align: center;
-}
+.kpi { padding: 1.75rem 1.5rem; border-right: 0.5px solid var(--border); text-align: center; }
 .kpi:last-child { border-right: none; }
-.kpi-value {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.35rem;
-}
-.kpi-label {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 400;
-  line-height: 1.4;
-}
+.kpi-num { font-size: 28px; font-weight: 700; letter-spacing: -0.04em; display: block; }
+.kpi-label { font-size: 11px; color: var(--muted); margin-top: 4px; display: block; }
 
-/* ── SECTIONS ───────────────────────────────────────────────────── */
-section {
-  border-bottom: 0.5px solid var(--border);
-}
-.section-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-.section-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--petrol);
-  margin-bottom: 0.75rem;
-}
-.section-title {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-.section-sub {
-  font-size: 1rem;
-  color: var(--muted);
-  max-width: 560px;
-  line-height: 1.65;
-  margin-bottom: 2.5rem;
-}
+/* ── Services ─────────────────────────────────────────────────────────────── */
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.svc-card { border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem; }
+.svc-role { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); margin-bottom: 0.75rem; display: block; }
+.svc-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1.5rem; line-height: 1.2; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11px; padding: 3px 10px; border-radius: 4px; background: #F5F5F5; color: #555; }
+.modes { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; border: 0.5px solid var(--border); }
+.mode { background: var(--white); padding: 1.5rem; }
+.mode-icon { font-size: 22px; color: var(--petrol); margin-bottom: 10px; }
+.mode-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; display: block; }
+.mode-tag { font-size: 12px; color: #666; display: block; padding: 2px 0; }
 
-/* ── LEISTUNGEN ─────────────────────────────────────────────────── */
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-.service-card {
-  background: var(--bg-subtle);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-}
-.service-card-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--petrol);
-  margin-bottom: 0.75rem;
-}
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-.service-card p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-.service-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.service-card ul li {
-  font-size: 13.5px;
-  color: var(--text);
-  padding-left: 1rem;
-  position: relative;
-}
-.service-card ul li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: var(--petrol);
-}
-
-/* Modi */
-.modi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.modus {
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-}
-.modus-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--petrol);
-  background: var(--petrol-light);
-  padding: 3px 10px;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
-}
-.modus h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-.modus p {
-  font-size: 13.5px;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-/* ── TICKER ─────────────────────────────────────────────────────── */
-.ticker-section {
-  padding: 1.25rem 0;
-  overflow: hidden;
-  border-bottom: 0.5px solid var(--border);
-}
-.ticker-section-investors {
-  padding: 1.25rem 0;
-  overflow: hidden;
-  background: var(--petrol);
-  border-bottom: 0.5px solid var(--border);
-}
-.ticker-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0 2rem;
-  margin-bottom: 0.75rem;
-}
-.ticker-label-inv {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  padding: 0 2rem;
-  margin-bottom: 0.75rem;
-}
+/* ── Ticker ───────────────────────────────────────────────────────────────── */
+.ticker-section { padding: 2.25rem 0; border-bottom: 0.5px solid var(--border); max-width: 100%; overflow: hidden; }
+.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding: 0 2rem; }
+.ticker-wrap { overflow: hidden; }
 .ticker-track {
-  display: flex;
-  gap: 10px;
-  animation: ticker 80s linear infinite;
+  display: flex; gap: 10px; white-space: nowrap;
   will-change: transform;
-  width: max-content;
 }
-.ticker-item {
-  flex-shrink: 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--petrol);
-  background: var(--petrol-light);
-  border: 0.5px solid var(--petrol-mid);
-  padding: 5px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.ticker-item-inv {
-  flex-shrink: 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: #fff;
-  background: rgba(255,255,255,0.15);
-  border: 0.5px solid rgba(255,255,255,0.3);
-  padding: 5px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-@keyframes ticker {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.ticker-track-rev {
-  display: flex;
-  gap: 10px;
-  animation: ticker 80s linear infinite;
-  will-change: transform;
-  width: max-content;
-}
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track, .ticker-track-rev { animation: none; }
-}
-.profil-inner {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 4rem;
-  align-items: start;
-}
-.profil-photo {
-  aspect-ratio: 1;
-  background: var(--bg-subtle);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 14px;
-  max-width: 280px;
-}
-.profil-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius);
-  display: block;
-}
-.profil-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-.profil-subtitle {
-  font-size: 14px;
-  color: var(--petrol);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-}
-.profil-bio {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 1.75rem;
-  max-width: 520px;
-}
-.profil-bio strong { color: var(--text); font-weight: 500; }
+.ticker-track.t1 { animation: tick 275s linear infinite; }
+.ticker-track.t2 { animation: tick 245s linear infinite; }
+@keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-item { font-size: 13px; font-weight: 500; padding: 5px 14px; border-radius: 6px; border: 0.5px solid #E0E0E0; color: #444; background: #FAFAFA; flex-shrink: 0; }
 
-/* ── CALENDLY ───────────────────────────────────────────────────── */
-#kontakt .section-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.calendly-inline-widget {
-  min-width: 320px;
-  height: 680px;
-  border-radius: var(--radius);
-  overflow: hidden;
-}
+/* ── Profile ──────────────────────────────────────────────────────────────── */
+.profile-grid { display: grid; grid-template-columns: 160px 1fr; gap: 2.5rem; align-items: start; }
+.profile-photo { aspect-ratio: 3/4; background: #F5F5F5; border-radius: 12px; border: 0.5px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #bbb; font-size: 11px; overflow: hidden; }
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; display: block; margin-bottom: 5px; }
+.profile-sub { font-size: 13px; color: var(--muted); display: block; margin-bottom: 1.5rem; }
+.profile-bio { font-size: 15px; line-height: 1.75; color: #444; margin-bottom: 1.75rem; }
 
-/* ── BLOG ───────────────────────────────────────────────────────── */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-.blog-card {
-  background: var(--bg-subtle);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-}
-.blog-date { font-size: 12px; color: var(--muted); margin-bottom: 0.6rem; }
-.blog-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; }
-.blog-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
-.blog-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--petrol);
-  background: var(--petrol-light);
-  padding: 2px 8px;
-  border-radius: 3px;
-  margin-bottom: 0.75rem;
-}
+/* ── Blog ─────────────────────────────────────────────────────────────────── */
+.blog-row { padding: 1.75rem 0; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; cursor: pointer; transition: background 0.15s; }
+.blog-row:hover { background: #FAFAFA; margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; }
+.blog-row:first-child { padding-top: 0; }
+.blog-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); }
+.blog-date { font-size: 11px; color: #bbb; }
+.blog-title { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; color: var(--black); }
+.blog-excerpt { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.blog-arrow { font-size: 18px; color: #ccc; flex-shrink: 0; }
+.blog-post { display: none; }
+.blog-post.active { display: block; }
+.blog-back { font-size: 13px; color: var(--petrol); background: none; border: none; cursor: pointer; font-family: var(--font); font-weight: 600; margin-bottom: 2rem; padding: 0; }
+.blog-post-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); display: block; margin-bottom: 1rem; }
+.blog-post-title { font-size: clamp(22px, 4vw, 34px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.75rem; line-height: 1.15; }
+.blog-post-date { font-size: 12px; color: var(--muted); display: block; margin-bottom: 2rem; }
+.blog-post-body { font-size: 15px; line-height: 1.85; color: #444; white-space: pre-line; }
 
-/* ── PARTNER ────────────────────────────────────────────────────── */
-.partner-placeholder {
-  background: var(--bg-subtle);
-  border: 0.5px dashed var(--border);
-  border-radius: var(--radius);
-  padding: 3rem;
-  text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-}
+/* ── Partner ──────────────────────────────────────────────────────────────── */
+.partners-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.partner-card { border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.partner-role { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--petrol); margin-bottom: 0.5rem; display: block; }
+.partner-name { font-size: 17px; font-weight: 700; display: block; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+.partner-desc { font-size: 13px; color: #666; line-height: 1.6; }
 
-/* ── LEGAL ──────────────────────────────────────────────────────── */
-.legal-content {
-  max-width: 680px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text);
-}
-.legal-content h2 { font-size: 1.2rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-.legal-content h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
-.legal-content p { margin-bottom: 0.75rem; color: var(--muted); }
-.legal-content p strong { color: var(--text); }
-.legal-content a { color: var(--petrol); text-decoration: underline; }
+/* ── Calendly ─────────────────────────────────────────────────────────────── */
+.calendly-wrap { border-radius: 12px; border: 0.5px solid var(--border); overflow: hidden; }
 
-/* ── FOOTER ─────────────────────────────────────────────────────── */
-footer {
-  padding: 1.75rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+/* ── Footer ───────────────────────────────────────────────────────────────── */
 .footer-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 0.5px solid var(--border);
 }
-footer p { font-size: 13px; color: var(--muted); }
+.footer-copy { font-size: 12px; color: #aaa; }
 .footer-links { display: flex; gap: 1.5rem; }
-.footer-links a { font-size: 13px; color: var(--muted); }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 12px; color: #aaa; transition: color 0.15s; }
+.footer-links a:hover { color: var(--petrol); }
 
-/* ── RESPONSIVE ─────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .nav-links, .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-  
-  #start { padding: 3.5rem 1.5rem 3rem; }
-  .hero-headline { font-size: 2.6rem; }
-  
-  .kpi-strip { grid-template-columns: repeat(3, 1fr); }
-  .kpi:nth-child(3) { border-right: none; }
-  .kpi:nth-child(4), .kpi:nth-child(5) { border-top: 0.5px solid var(--border); }
-  .kpi:nth-child(5) { border-right: none; }
-  
-  .section-inner { padding: 3rem 1.5rem; }
+/* ── Cookie Banner ────────────────────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--black); color: var(--white);
+  padding: 1.25rem 2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 13px; line-height: 1.5;
+}
+.cookie-banner.hidden { display: none; }
+.cookie-banner p { flex: 1; min-width: 200px; color: #ccc; }
+.cookie-banner p a { color: var(--petrol); text-decoration: underline; }
+.cookie-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-accept { background: var(--petrol); color: var(--white); border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; font-family: var(--font); }
+.cookie-decline { background: transparent; color: #aaa; border: 0.5px solid #444; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: var(--font); }
+
+/* ── Pages ────────────────────────────────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .nav-inner { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .section { padding: 2rem 1.25rem; }
+  .kpi-strip { grid-template-columns: repeat(2,1fr); }
+  .kpi:nth-child(2) { border-right: none; }
+  .kpi:nth-child(3),
+  .kpi:nth-child(4) { border-top: 0.5px solid var(--border); }
+  .kpi:nth-child(4) { border-right: none; }
+  .kpi:nth-child(5) { grid-column: span 2; border-top: 0.5px solid var(--border); border-right: none; }
   .services-grid { grid-template-columns: 1fr; }
-  .modi-grid { grid-template-columns: 1fr; }
-  
-  .profil-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .profil-photo { max-width: 180px; }
-  
-  #kontakt .section-inner { grid-template-columns: 1fr; }
-  .calendly-inline-widget { min-width: 100%; }
-  
-  .blog-grid { grid-template-columns: 1fr; }
-  
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .modes { grid-template-columns: 1fr; }
+  .partners-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-photo { display: none; }
+  .footer-inner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.25rem; }
+  .cookie-banner { flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ticker-track, .ticker-track-rev { animation: none; }
+  .ticker-track { animation: none; }
 }
-
-#back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 40px;
-  height: 40px;
-  background: var(--petrol);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#back-to-top.visible { opacity: 1; pointer-events: auto; }
-#back-to-top:hover { background: #0a5e62; }
 </style>
 </head>
 <body>
-<a id="back-to-top" href="#start" aria-label="Nach oben">↑</a>
 
-<!-- ══ COOKIE BANNER ══════════════════════════════════════════════ -->
-<div id="cookie-banner" style="display:none;">
-  <p>Diese Website nutzt Google Analytics 4 zur anonymen Analyse. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-  <div class="cookie-actions">
-    <button class="btn-decline" onclick="cookieDecline()">Ablehnen</button>
-    <button class="btn-accept" onclick="cookieAccept()">Akzeptieren</button>
+<!-- ── Cookie Banner ──────────────────────────────────────────────────────── -->
+<div class="cookie-banner" id="cookieBanner">
+  <p id="cookieText">
+    Diese Website verwendet Google Analytics zur Analyse der Nutzung. Mehr dazu in der <a href="#" onclick="showPage('datenschutz'); return false;" id="cookieDsLink">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button class="cookie-decline" onclick="cookieDecline()" id="cookieDeclineBtn">Ablehnen</button>
+    <button class="cookie-accept"  onclick="cookieAccept()"  id="cookieAcceptBtn">Akzeptieren</button>
   </div>
 </div>
 
-<!-- ══ NAV ════════════════════════════════════════════════════════ -->
-<nav>
+<!-- ── Nav ────────────────────────────────────────────────────────────────── -->
+<div class="nav" role="navigation">
   <div class="nav-inner">
-    <a href="#start" class="nav-logo">
-      <svg viewBox="0 0 140 34" height="28" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="2" width="11" height="11" rx="2" fill="#0D7377" opacity=".2"/>
-        <rect x="14" y="2" width="11" height="11" rx="2" fill="#0D7377" opacity=".5"/>
-        <rect x="0" y="16" width="11" height="11" rx="2" fill="#0D7377" opacity=".5"/>
-        <rect x="14" y="16" width="11" height="11" rx="2" fill="#0D7377"/>
-        <text x="33" y="23" font-family="DM Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#0D7377" letter-spacing="-.3">Hofmuth</text>
-      </svg>
-    </a>
+    <span class="nav-logo" onclick="showPage('home')">Hofmuth</span>
     <ul class="nav-links">
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#profil">Über mich</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#" onclick="showPage('home'); scrollTo('leistungen'); return false;" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+      <li><a href="#" onclick="showPage('home'); scrollTo('referenzen'); return false;" data-de="Referenzen" data-en="References">Referenzen</a></li>
+      <li><a href="#" onclick="showPage('partner'); return false;" data-de="Partner" data-en="Partners">Partner</a></li>
+      <li><a href="#" onclick="showPage('blog'); return false;" data-de="Blog" data-en="Blog">Blog</a></li>
     </ul>
-    <a href="#kontakt" class="nav-cta">Gespräch vereinbaren</a>
-    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menü">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="#leistungen" onclick="closeMenu()">Leistungen</a>
-    <a href="#profil" onclick="closeMenu()">Über mich</a>
-    <a href="#blog" onclick="closeMenu()">Blog</a>
-    <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
-    <a href="#kontakt" class="btn-primary" style="text-align:center;margin-top:0.5rem;" onclick="closeMenu()">Gespräch vereinbaren</a>
-  </div>
-</nav>
-
-<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
-<div id="start">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Fractional CHRO &amp; CFO</p>
-    <h1 class="hero-headline">People.<br>Figures.<br><strong>Impact.</strong></h1>
-    <p class="hero-sub">Ich übernehme gleichzeitig Verantwortung für People und Finance. In Ventures, die wachsen, umbauen oder sich neu erfinden.</p>
-    <div class="hero-actions">
-      <a href="#kontakt" class="btn-primary">Erstgespräch vereinbaren</a>
-      <a href="cv-matthias-hofmuth.pdf" class="btn-secondary" download>CV herunterladen</a>
+    <div class="nav-right">
+      <span class="nav-lang" onclick="toggleLang()" id="langToggle">EN</span>
+      <a class="nav-cta" href="#" onclick="showPage('home'); setTimeout(()=>document.getElementById('calendly').scrollIntoView({behavior:'smooth'}),100); return false;" data-de="Kontakt" data-en="Contact">Kontakt</a>
+      <button class="hamburger" onclick="toggleMobile()" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
-</div>
-
-<!-- ══ KPI STRIP ══════════════════════════════════════════════════ -->
-<div class="kpi-strip">
-  <div class="kpi">
-    <div class="kpi-value">1.600+</div>
-    <div class="kpi-label">FTE skaliert</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-value">750+</div>
-    <div class="kpi-label">Hires pro Jahr</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-value">16+</div>
-    <div class="kpi-label">Länder</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-value">10+</div>
-    <div class="kpi-label">Ventures geprägt</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-value">7+</div>
-    <div class="kpi-label">Finanzierungs&shy;runden abgeschlossen</div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-link" onclick="showPage('home'); toggleMobile();" data-de="Home" data-en="Home">Home</div>
+    <div class="mobile-link" onclick="showPage('home'); toggleMobile(); scrollTo('leistungen');" data-de="Leistungen" data-en="Services">Leistungen</div>
+    <div class="mobile-link" onclick="showPage('home'); toggleMobile(); scrollTo('referenzen');" data-de="Referenzen" data-en="References">Referenzen</div>
+    <div class="mobile-link" onclick="showPage('partner'); toggleMobile();" data-de="Partner" data-en="Partners">Partner</div>
+    <div class="mobile-link" onclick="showPage('blog'); toggleMobile();" data-de="Blog" data-en="Blog">Blog</div>
   </div>
 </div>
 
-<!-- ══ LEISTUNGEN ═════════════════════════════════════════════════ -->
-<section id="leistungen">
-  <div class="section-inner">
-    <p class="section-label">Leistungen</p>
-    <h2 class="section-title">People und Finance aus einer Hand.</h2>
-    <p class="section-sub">Du bekommst CHRO und CFO aus einer Hand. Ich arbeite als Business Partner direkt mit dem Leadership-Team, bringe operative Stärke mit und halte eine hohe Schlagzahl.</p>
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- HOME PAGE                                                                   -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
 
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-eyebrow" data-de="Fractional CHRO & CFO · Augsburg / München" data-en="Fractional CHRO & CFO · Augsburg / Munich">Fractional CHRO & CFO · Augsburg / München</p>
+    <h1 class="hero-headline">
+      <span data-de="People." data-en="People.">People.</span><br>
+      <span data-de="Finance." data-en="Finance.">Finance.</span><br>
+      <span class="accent" data-de="Wachstum." data-en="Growth.">Wachstum.</span>
+    </h1>
+    <div class="hero-pills">
+      <span class="pill active" data-de="Hiring"                data-en="Hiring">Hiring</span>
+      <span class="pill active" data-de="Leadership"            data-en="Leadership">Leadership</span>
+      <span class="pill active" data-de="Operational Excellence" data-en="Operational Excellence">Operational Excellence</span>
+      <span class="pill"        data-de="Scale-up"              data-en="Scale-up">Scale-up</span>
+      <span class="pill"        data-de="Restrukturierung"      data-en="Restructuring">Restrukturierung</span>
+      <span class="pill"        data-de="People Analytics"      data-en="People Analytics">People Analytics</span>
+      <span class="pill"        data-de="AI"                    data-en="AI">AI</span>
+    </div>
+    <a class="btn" href="#" onclick="document.getElementById('calendly').scrollIntoView({behavior:'smooth'}); return false;" data-de="Erstgespräch vereinbaren" data-en="Book a call">Erstgespräch vereinbaren</a>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-strip">
+    <div class="kpi"><span class="kpi-num">1.600+</span><span class="kpi-label" data-de="FTE skaliert" data-en="FTE scaled">FTE skaliert</span></div>
+    <div class="kpi"><span class="kpi-num">750+</span><span class="kpi-label" data-de="Hires / Jahr" data-en="Hires / Year">Hires / Jahr</span></div>
+    <div class="kpi"><span class="kpi-num">16+</span><span class="kpi-label" data-de="Länder" data-en="Countries">Länder</span></div>
+    <div class="kpi"><span class="kpi-num">8-stellig</span><span class="kpi-label" data-de="Finanzierungsrunde begleitet" data-en="Financing round supported">Finanzierungsrunde begleitet</span></div>
+    <div class="kpi"><span class="kpi-num">10+</span><span class="kpi-label" data-de="Ventures unterstützt" data-en="Ventures supported">Ventures unterstützt</span></div>
+  </div>
+
+  <!-- Leistungen -->
+  <div class="section" id="leistungen">
+    <p class="sec-label" data-de="Leistungen" data-en="Services">Leistungen</p>
     <div class="services-grid">
-      <div class="service-card">
-        <p class="service-card-label">Fractional CHRO</p>
-        <h3>People &amp; Organisation</h3>
-        <p>Ich baue die People-Funktion auf, die dein Unternehmen gerade braucht. Und entwickle sie mit, wenn dein Unternehmen wächst.</p>
-        <ul>
-          <li>Aufbau &amp; Skalierung von People-Funktionen</li>
-          <li>High-Volume Hiring &amp; Talent Acquisition</li>
-          <li>Leadership Development</li>
-          <li>People Analytics &amp; HRIS-Implementierung</li>
-          <li>Betriebsrat &amp; Arbeitnehmervertretung</li>
-          <li>Internationales HR (16+ Länder)</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <p class="service-card-label">Fractional CFO</p>
-        <h3>Finance &amp; Business Partnering</h3>
-        <p>Ich mache Finance zum strategischen Werkzeug: Strukturen aufbauen, Zahlen interpretieren, Prioritäten setzen.</p>
-        <ul>
-          <li>Aufbau von Finance- &amp; Controllingstrukturen</li>
-          <li>Budgetierung, Forecasting, Reporting</li>
-          <li>Finanzierungsrunden &amp; Investor Relations</li>
-          <li>Effizienzprogramme &amp; Restrukturierung</li>
-          <li>B2C→B2B-Pivots &amp; Reorganisation</li>
-          <li>Commercial Finance &amp; Szenarioplanung</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="modi-grid">
-      <div class="modus">
-        <span class="modus-tag">Wachstum</span>
-        <h4>Wenn Geschwindigkeit und Struktur beide gleichzeitig stimmen müssen</h4>
-        <p>Skalieren, bevor die fehlende Struktur zum Engpass wird.</p>
-      </div>
-      <div class="modus">
-        <span class="modus-tag">Wandel</span>
-        <h4>Wenn sich das Geschäftsmodell ändert und die Organisation folgen muss</h4>
-        <p>Pivots und Restrukturierungen. Ich hab beides schon mehrfach gemacht.</p>
-      </div>
-      <div class="modus">
-        <span class="modus-tag">Organisation</span>
-        <h4>Wenn es auf operative Exzellenz ankommt</h4>
-        <p>Prozesse und Strukturen, die wirklich tragen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TICKER VENTURES (nach Leistungen) ══════════════════════════ -->
-<div class="ticker-section">
-  <p class="ticker-label">Ventures</p>
-  <div class="ticker-track" id="ventures-track"></div>
-</div>
-
-<!-- ══ PROFIL ═════════════════════════════════════════════════════ -->
-<section id="profil">
-  <div class="section-inner">
-    <div class="profil-inner">
-      <div>
-        <div class="profil-photo" id="profil-photo">
-          <img src="foto.jpg" alt="Dr. Matthias Hofmuth">
+      <div class="svc-card">
+        <span class="svc-role" data-de="Fractional CHRO" data-en="Fractional CHRO">Fractional CHRO</span>
+        <div class="svc-title" data-de="People &amp; Organisation" data-en="People &amp; Organisation">People &amp; Organisation</div>
+        <div class="tags">
+          <span class="tag" data-de="Hiring & Talent Acquisition" data-en="Hiring & Talent Acquisition">Hiring & Talent Acquisition</span>
+          <span class="tag" data-de="Leadership Development" data-en="Leadership Development">Leadership Development</span>
+          <span class="tag" data-de="Teamentwicklung" data-en="Team Development">Teamentwicklung</span>
+          <span class="tag" data-de="Operational Excellence" data-en="Operational Excellence">Operational Excellence</span>
+          <span class="tag" data-de="People Analytics" data-en="People Analytics">People Analytics</span>
+          <span class="tag" data-de="HRIS-Implementierung" data-en="HRIS Implementation">HRIS-Implementierung</span>
+          <span class="tag" data-de="Aufbauorganisation" data-en="Org Design">Aufbauorganisation</span>
+          <span class="tag" data-de="Betriebsrat" data-en="Works Council">Betriebsrat</span>
+          <span class="tag" data-de="C&amp;B" data-en="C&amp;B">C&amp;B</span>
+          <span class="tag" data-de="AI in HR" data-en="AI in HR">AI in HR</span>
         </div>
       </div>
-      <div>
-        <p class="section-label">Über mich</p>
-        <h2 class="profil-name">Dr. Matthias Hofmuth</h2>
-        <p class="profil-subtitle">Fractional CHRO &amp; CFO · München</p>
-        <p class="profil-bio">
-          Ich habe Unternehmen von 40 auf 1.600+ Mitarbeitende skaliert, Finanzierungsrunden verantwortet und Restrukturierungen geführt. <strong>Das ist meine Arbeit seit über zehn Jahren.</strong>
-        </p>
-        <a href="cv-matthias-hofmuth.pdf" class="btn-secondary" download>CV herunterladen</a>
+      <div class="svc-card">
+        <span class="svc-role" data-de="Fractional CFO" data-en="Fractional CFO">Fractional CFO</span>
+        <div class="svc-title" data-de="Finance als Business Partner" data-en="Finance as Business Partner">Finance als Business Partner</div>
+        <div class="tags">
+          <span class="tag" data-de="Controlling & FP&A" data-en="Controlling & FP&A">Controlling & FP&A</span>
+          <span class="tag" data-de="Operational Excellence" data-en="Operational Excellence">Operational Excellence</span>
+          <span class="tag" data-de="Professionalisierung" data-en="Professionalisation">Professionalisierung</span>
+          <span class="tag" data-de="Skalierbarkeit" data-en="Scalability">Skalierbarkeit</span>
+          <span class="tag" data-de="Resilienz" data-en="Resilience">Resilienz</span>
+          <span class="tag" data-de="Audit & Abschluss" data-en="Audit & Closing">Audit & Abschluss</span>
+          <span class="tag" data-de="Fördermittel" data-en="Grants">Fördermittel</span>
+        </div>
+      </div>
+    </div>
+    <div class="modes">
+      <div class="mode">
+        <div class="mode-icon">↑</div>
+        <span class="mode-title" data-de="Wachstum" data-en="Growth">Wachstum</span>
+        <span class="mode-tag" data-de="Scaling" data-en="Scaling">Scaling</span>
+        <span class="mode-tag" data-de="Hiring" data-en="Hiring">Hiring</span>
+        <span class="mode-tag" data-de="Internationalisierung" data-en="Internationalisation">Internationalisierung</span>
+        <span class="mode-tag" data-de="Hypergrowth" data-en="Hypergrowth">Hypergrowth</span>
+        <span class="mode-tag" data-de="Teamaufbau" data-en="Team Building">Teamaufbau</span>
+      </div>
+      <div class="mode">
+        <div class="mode-icon">↺</div>
+        <span class="mode-title" data-de="Wandel" data-en="Change">Wandel</span>
+        <span class="mode-tag" data-de="Restrukturierung" data-en="Restructuring">Restrukturierung</span>
+        <span class="mode-tag" data-de="Rightsizing" data-en="Rightsizing">Rightsizing</span>
+        <span class="mode-tag" data-de="Change Management" data-en="Change Management">Change Management</span>
+        <span class="mode-tag" data-de="Effizienz" data-en="Efficiency">Effizienz</span>
+      </div>
+      <div class="mode">
+        <div class="mode-icon">⬡</div>
+        <span class="mode-title" data-de="Organisation" data-en="Organisation">Organisation</span>
+        <span class="mode-tag" data-de="Operational Excellence" data-en="Operational Excellence">Operational Excellence</span>
+        <span class="mode-tag" data-de="Aufbauorganisation" data-en="Org Design">Aufbauorganisation</span>
+        <span class="mode-tag" data-de="Leadership" data-en="Leadership">Leadership</span>
+        <span class="mode-tag" data-de="Ablauforganisation" data-en="Process Design">Ablauforganisation</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ══ TICKER INVESTOREN (nach Profil) ════════════════════════════ -->
-<div class="ticker-section-investors">
-  <p class="ticker-label-inv">Investoren</p>
-  <div class="ticker-track-rev" id="investors-track"></div>
+  <!-- Referenzen / Ticker -->
+  <div class="ticker-section" id="referenzen">
+    <p class="ticker-label" data-de="Ventures" data-en="Ventures">Ventures</p>
+    <div class="ticker-wrap">
+      <div class="ticker-track t1" id="tickerVentures"></div>
+    </div>
+    <p class="ticker-label" style="margin-top:1.5rem" data-de="Investoren" data-en="Investors">Investoren</p>
+    <div class="ticker-wrap">
+      <div class="ticker-track t2" id="tickerInvestors"></div>
+    </div>
+  </div>
+
+  <!-- Profil -->
+  <div class="section">
+    <p class="sec-label" data-de="Profil" data-en="Profile">Profil</p>
+    <div class="profile-grid">
+      <div class="profile-photo">
+        <span data-de="Foto folgt" data-en="Photo soon">Foto folgt</span>
+      </div>
+      <div>
+        <span class="profile-name">Dr. Matthias Hofmuth</span>
+        <span class="profile-sub" data-de="Fractional CHRO & CFO · Augsburg" data-en="Fractional CHRO & CFO · Augsburg">Fractional CHRO & CFO · Augsburg</span>
+        <p class="profile-bio" data-de="Ich baue und entwickle Teams, Führungskräfte und Organisationen – in Wachstumsphasen genauso wie in Restrukturierungen. Als CHRO bringe ich einen klaren Blick auf Zahlen mit. Als CFO einen klaren Blick auf Menschen." data-en="I build and develop teams, leaders, and organisations – in growth phases as well as in restructurings. As CHRO, I bring a sharp eye for numbers. As CFO, a sharp eye for people.">
+          Ich baue und entwickle Teams, Führungskräfte und Organisationen – in Wachstumsphasen genauso wie in Restrukturierungen. Als CHRO bringe ich einen klaren Blick auf Zahlen mit. Als CFO einen klaren Blick auf Menschen.
+        </p>
+        <a class="btn btn-outline" href="assets/cv-matthias-hofmuth.pdf" download data-de="CV herunterladen →" data-en="Download CV →">CV herunterladen →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendly -->
+  <div class="section" id="calendly">
+    <p class="sec-label" data-de="Interesse?" data-en="Interested?">Interesse?</p>
+    <p style="font-size:14px; color:#666; margin-bottom:1.75rem;">
+      <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol); font-weight:500;">matthias@hofmuth.com</a>
+    </p>
+    <div class="calendly-wrap">
+      <iframe
+        src="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch?hide_gdpr_banner=1&background_color=ffffff&text_color=111111&primary_color=0D7377"
+        width="100%" height="650" frameborder="0" loading="lazy" title="Termin buchen">
+      </iframe>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- PARTNER PAGE                                                                -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div id="page-partner" class="page">
+  <div class="section">
+    <button class="blog-back" onclick="showPage('home')" data-de="← Zurück" data-en="← Back">← Zurück</button>
+    <p class="sec-label" data-de="Netzwerk & Partner" data-en="Network & Partners">Netzwerk & Partner</p>
+    <p style="font-size:14px; color:#666; margin-bottom:2rem; line-height:1.7;" data-de="Für komplexe Mandate arbeite ich mit einem Netzwerk aus spezialisierten Partnern zusammen." data-en="For complex mandates, I work with a network of specialised partners.">
+      Für komplexe Mandate arbeite ich mit einem Netzwerk aus spezialisierten Partnern zusammen.
+    </p>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <span class="partner-role" data-de="Interim CFO" data-en="Interim CFO">Interim CFO</span>
+        <span class="partner-name" data-de="Partner A" data-en="Partner A">Partner A</span>
+        <p class="partner-desc" data-de="Platzhalter – wird ergänzt." data-en="Placeholder – to be added.">Platzhalter – wird ergänzt.</p>
+      </div>
+      <div class="partner-card">
+        <span class="partner-role" data-de="Legal & Employment" data-en="Legal & Employment">Legal & Employment</span>
+        <span class="partner-name" data-de="Partner B" data-en="Partner B">Partner B</span>
+        <p class="partner-desc" data-de="Platzhalter – wird ergänzt." data-en="Placeholder – to be added.">Platzhalter – wird ergänzt.</p>
+      </div>
+      <div class="partner-card">
+        <span class="partner-role" data-de="M&A Advisory" data-en="M&A Advisory">M&A Advisory</span>
+        <span class="partner-name" data-de="Partner C" data-en="Partner C">Partner C</span>
+        <p class="partner-desc" data-de="Platzhalter – wird ergänzt." data-en="Placeholder – to be added.">Platzhalter – wird ergänzt.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- ══ KONTAKT / CALENDLY ═════════════════════════════════════════ -->
-<section id="kontakt">
-  <div class="section-inner">
-    <div>
-      <p class="section-label">Kontakt</p>
-      <h2 class="section-title">Interesse?</h2>
-      <p class="section-sub">Dann lass uns reden. Schreib mir direkt oder buch dir einen Termin.</p>
-      <p style="font-size:15px;margin-bottom:0.5rem;">
-        <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);font-weight:500;">matthias@hofmuth.com</a>
-      </p>
-      <p style="font-size:14px;color:var(--muted);">
-        <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          linkedin.com/in/matthias-hofmuth
-        </a>
-      </p>
-    </div>
-    <div id="calendly-container">
-      <div id="calendly-placeholder" style="background:var(--bg-subtle);border:0.5px solid var(--border);border-radius:var(--radius);min-height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;text-align:center;padding:2.5rem;">
-        <p style="color:var(--muted);font-size:14px;max-width:300px;line-height:1.6;">Terminbuchung direkt über Calendly – öffnet in einem neuen Tab.</p>
-        <a href="https://calendly.com/matthias-hofmuth-dxyo/getting-in-touch" target="_blank" rel="noopener" class="btn-primary">Termin buchen →</a>
-        <p style="color:var(--muted);font-size:12px;max-width:280px;">Nach Klick auf „Termin buchen" gelten die <a href="https://calendly.com/privacy" target="_blank" rel="noopener" style="color:var(--petrol);">Datenschutzrichtlinien von Calendly</a>.</p>
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- BLOG PAGE                                                                   -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div id="page-blog" class="page">
+  <div class="section">
+    <button class="blog-back" onclick="showPage('home')" data-de="← Zurück" data-en="← Back">← Zurück</button>
+    <p class="sec-label" data-de="Blog" data-en="Blog">Blog</p>
+    <div id="blogList">
+      <div class="blog-row" onclick="showPost(0)">
+        <div>
+          <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
+            <span class="blog-tag">People</span>
+            <span class="blog-date">Jun 2026</span>
+          </div>
+          <div class="blog-title" data-de="Hiring in der Krise: Was Founder falsch machen" data-en="Hiring in a crisis: What founders get wrong">Hiring in der Krise: Was Founder falsch machen</div>
+          <p class="blog-excerpt" data-de="Wenn das Wachstum stockt, ist Hiring das erste was gestrichen wird – und das erste was fehlt wenn es wieder anzieht." data-en="When growth stalls, hiring is the first thing cut – and the first thing missing when it picks back up.">Wenn das Wachstum stockt, ist Hiring das erste was gestrichen wird – und das erste was fehlt wenn es wieder anzieht.</p>
+        </div>
+        <span class="blog-arrow">→</span>
+      </div>
+      <div class="blog-row" onclick="showPost(1)">
+        <div>
+          <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
+            <span class="blog-tag">Finance</span>
+            <span class="blog-date">Mai 2026</span>
+          </div>
+          <div class="blog-title" data-de="Finance als Business Partner: Was das wirklich bedeutet" data-en="Finance as Business Partner: What it really means">Finance als Business Partner: Was das wirklich bedeutet</div>
+          <p class="blog-excerpt" data-de="Die meisten CFOs berichten nach hinten. Echtes Business Partnering schaut nach vorne." data-en="Most CFOs report backwards. Real business partnering looks forward.">Die meisten CFOs berichten nach hinten. Echtes Business Partnering schaut nach vorne.</p>
+        </div>
+        <span class="blog-arrow">→</span>
+      </div>
+      <div class="blog-row" onclick="showPost(2)">
+        <div>
+          <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
+            <span class="blog-tag">Organisation</span>
+            <span class="blog-date">Apr 2026</span>
+          </div>
+          <div class="blog-title" data-de="Aufbauorganisation im Scale-up: Wann ist der richtige Zeitpunkt?" data-en="Org design in a scale-up: When is the right moment?">Aufbauorganisation im Scale-up: Wann ist der richtige Zeitpunkt?</div>
+          <p class="blog-excerpt" data-de="Struktur zu früh kostet Agilität. Zu spät kostet Kontrolle." data-en="Structure too early costs agility. Too late costs control.">Struktur zu früh kostet Agilität. Zu spät kostet Kontrolle.</p>
+        </div>
+        <span class="blog-arrow">→</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ══ BLOG ═══════════════════════════════════════════════════════ -->
-<section id="blog">
-  <div class="section-inner">
-    <p class="section-label">Blog</p>
-    <h2 class="section-title">Insights.</h2>
-    <p class="section-sub">Keine Ratgeber-Artikel. Was ich aus Mandaten mitnehme.</p>
-
-    <div class="blog-grid">
-      <div class="blog-card">
-        <span class="blog-tag">CHRO</span>
-        <p class="blog-date">Demnächst</p>
-        <h3>Warum High-Volume Hiring kein Skalierungsproblem ist</h3>
-        <p>750 Hires pro Jahr sind keine Mengenaufgabe. Sie sind eine Qualitätsaufgabe unter Zeitdruck.</p>
-      </div>
-      <div class="blog-card">
-        <span class="blog-tag">CFO</span>
-        <p class="blog-date">Demnächst</p>
-        <h3>Finance als Business Partner: Was das wirklich bedeutet</h3>
-        <p>Was ein CFO wirklich tun muss – und warum viele es nicht tun.</p>
-      </div>
-      <div class="blog-card">
-        <span class="blog-tag">Organisation</span>
-        <p class="blog-date">Demnächst</p>
-        <h3>Struktur fühlt sich wie Bürokratie an – bis sie fehlt</h3>
-        <p>Warum Founders Struktur ablehnen, bis die fehlende Struktur teurer wird als die Einführung.</p>
-      </div>
+    <div id="blogPost" class="blog-post">
+      <button class="blog-back" onclick="showPost(-1)" data-de="← Zurück" data-en="← Back">← Zurück</button>
+      <span class="blog-post-tag" id="postTag"></span>
+      <h2 class="blog-post-title" id="postTitle"></h2>
+      <span class="blog-post-date" id="postDate"></span>
+      <p class="blog-post-body" id="postBody"></p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- IMPRESSUM                                                                   -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div id="page-impressum" class="page">
+  <div class="section">
+    <button class="blog-back" onclick="showPage('home')">← Zurück</button>
+    <h1 style="font-size:28px; font-weight:700; letter-spacing:-0.03em; margin-bottom:2rem;">Impressum</h1>
+    <div style="font-size:14px; line-height:1.8; color:#333; max-width:600px;">
+      <p style="font-weight:600; margin-bottom:0.25rem;">Angaben gemäß § 5 TMG</p>
+      <p>Dr. Matthias Hofmuth</p>
+      <p>Hofmuth: Consult &amp; Interim</p>
+      <p>Nebelhornstr. 80</p>
+      <p style="margin-bottom:1.5rem;">86163 Augsburg</p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Kontakt</p>
+      <p>E-Mail: <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);">matthias@hofmuth.com</a></p>
+      <p style="margin-bottom:1.5rem;">Web: <a href="https://hofmuth.com" style="color:var(--petrol);">hofmuth.com</a></p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Umsatzsteuer-Identifikationsnummer</p>
+      <p style="margin-bottom:1.5rem;">DE454324924</p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Steuernummer</p>
+      <p style="margin-bottom:1.5rem;">103/230/41275</p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</p>
+      <p style="margin-bottom:1.5rem;">Dr. Matthias Hofmuth, Nebelhornstr. 80, 86163 Augsburg</p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Haftungsausschluss</p>
+      <p style="margin-bottom:1rem;">Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+      <p style="font-weight:600; margin-bottom:0.25rem;">Urheberrecht</p>
+      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- DATENSCHUTZ                                                                 -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div id="page-datenschutz" class="page">
+  <div class="section">
+    <button class="blog-back" onclick="showPage('home')">← Zurück</button>
+    <h1 style="font-size:28px; font-weight:700; letter-spacing:-0.03em; margin-bottom:2rem;">Datenschutzerklärung</h1>
+    <div style="font-size:14px; line-height:1.8; color:#333; max-width:600px;">
+      <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">1. Verantwortlicher</h2>
+      <p>Dr. Matthias Hofmuth, Hofmuth: Consult &amp; Interim, Nebelhornstr. 80, 86163 Augsburg<br>
+      E-Mail: <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);">matthias@hofmuth.com</a></p>
+      <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">2. Erhebung und Speicherung personenbezogener Daten</h2>
+      <p>Beim Besuch dieser Website werden automatisch Informationen allgemeiner Natur erfasst (Serverlog-Daten). Diese Daten werden nicht mit personenbezogenen Daten zusammengeführt und nach spätestens 7 Tagen gelöscht.</p>
+      <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">3. Google Analytics</h2>
+      <p style="margin-bottom:0.75rem;">Diese Website nutzt Google Analytics 4, einen Webanalysedienst der Google Ireland Limited. Google Analytics verwendet Cookies zur Analyse der Websitenutzung. Die Verarbeitung erfolgt nur nach Ihrer ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen.</p>
+      <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">4. Calendly</h2>
+      <p>Zur Terminbuchung wird Calendly (Calendly LLC, Atlanta, USA) eingesetzt. Es gelten die Datenschutzbestimmungen von Calendly: <a href="https://calendly.com/privacy" target="_blank" rel="noreferrer" style="color:var(--petrol);">calendly.com/privacy</a>.</p>
+      <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">5. Ihre Rechte</h2>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Zuständige Aufsichtsbehörde: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA).<br>Kontakt: <a href="mailto:matthias@hofmuth.com" style="color:var(--petrol);">matthias@hofmuth.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Dr. Matthias Hofmuth · Hofmuth: Consult &amp; Interim</p>
+    <span class="footer-copy">© 2026 Dr. Matthias Hofmuth · Hofmuth: Consult &amp; Interim</span>
     <div class="footer-links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" onclick="showPage('impressum'); return false;" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+      <a href="#" onclick="showPage('datenschutz'); return false;" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+      <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </div>
 </footer>
 
-<!-- ══ SCRIPTS ════════════════════════════════════════════════════ -->
+<!-- ── JavaScript ──────────────────────────────────────────────────────────── -->
 <script>
-// ─ Ticker ──────────────────────────────────────────────────────────
-const ventures = ["Flix","xentral","Temedica","Joby Aviation","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up"];
-const investors = ["Sequoia Capital","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic"];
+// ── Data ──────────────────────────────────────────────────────────────────────
+const ventures  = ["Flix","xentral","Temedica","Joby","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up"];
+const investors = ["Sequoia","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic"];
 
-function buildTicker(el, items, cls) {
-  // Quadruplizieren für nahtlose Endlosschleife
-  const all = [...items, ...items, ...items, ...items];
-  el.innerHTML = all.map(i => `<span class="${cls}">${i}</span>`).join('');
-}
-buildTicker(document.getElementById('ventures-track'), ventures, 'ticker-item');
-buildTicker(document.getElementById('investors-track'), investors, 'ticker-item-inv');
-
-// ─ Nach oben Button ────────────────────────────────────────────────
-const btt = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  btt.classList.toggle('visible', window.scrollY > 400);
-}, { passive: true });
-
-// ─ Nav hamburger ───────────────────────────────────────────────────
-function toggleMenu() {
-  document.getElementById('nav-mobile').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('nav-mobile').classList.remove('open');
-}
-
-// ─ Cookie Consent ──────────────────────────────────────────────────
-const GA_ID = 'G-9XCS8ZG85Q';
-const CONSENT_KEY = 'hm_cookie_consent';
-
-function cookieAccept() {
-  localStorage.setItem(CONSENT_KEY, 'accepted');
-  hideBanner();
-  loadGA();
-}
-function cookieDecline() {
-  localStorage.setItem(CONSENT_KEY, 'declined');
-  hideBanner();
-}
-function hideBanner() {
-  document.getElementById('cookie-banner').style.display = 'none';
-}
-
-function loadGA() {
-  if (window._gaLoaded) return;
-  window._gaLoaded = true;
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', GA_ID, { anonymize_ip: true });
-}
-
-// ─ Init ────────────────────────────────────────────────────────────
-(function init() {
-  const consent = localStorage.getItem(CONSENT_KEY);
-  if (consent === 'accepted') {
-    loadGA();
-  } else if (consent === 'declined') {
-    // No tracking
-  } else {
-    setTimeout(() => {
-      document.getElementById('cookie-banner').style.display = 'flex';
-    }, 800);
+const blogPosts = [
+  {
+    tag: "People", date: "Jun 2026",
+    title: { de: "Hiring in der Krise: Was Founder falsch machen", en: "Hiring in a crisis: What founders get wrong" },
+    body:  { de: "Wenn das Wachstum stockt, ist Hiring das erste was gestrichen wird – und das erste was fehlt wenn es wieder anzieht.\n\nDas Muster ist so konsistent, dass man es fast als Naturgesetz bezeichnen könnte. Unternehmen, die in der Krise zu aggressiv abbauen, zahlen auf dem Weg nach oben das Dreifache: höhere Gehälter für knappes Talent, längere Time-to-Hire, und den Verlust von institutionellem Wissen.\n\nDie Lehre daraus ist keine Aufforderung, blind weiterzuhiren. Sie ist eine Aufforderung, strategisch zu denken – welche Rollen sind strukturell notwendig, welche sind Nice-to-have.", en: "When growth stalls, hiring is the first thing cut – and the first thing missing when it picks back up.\n\nThe pattern is so consistent it might as well be a law of nature. Companies that cut too aggressively in a downturn pay triple on the way back up: higher salaries for scarce talent, longer time-to-hire, and the loss of institutional knowledge.\n\nThe lesson isn't a call to keep hiring blindly. It's a call to think strategically – which roles are structurally necessary, which are nice-to-have." }
+  },
+  {
+    tag: "Finance", date: "Mai 2026",
+    title: { de: "Finance als Business Partner: Was das wirklich bedeutet", en: "Finance as Business Partner: What it really means" },
+    body:  { de: "Die meisten CFOs berichten nach hinten. Echtes Business Partnering schaut nach vorne – und sitzt am Tisch wenn Entscheidungen fallen.\n\nDer Unterschied ist nicht nur ein kultureller. Er ist strukturell: Wer Finance als Kontrollorgan begreift, bekommt Controller. Wer Finance als strategischen Sparringspartner begreift, bekommt Entscheidungsunterstützung.\n\nIn der Praxis bedeutet das: weniger Reporting, mehr Szenarien. Weniger Vergangenheit, mehr Vorausschau.", en: "Most CFOs report backwards. Real business partnering looks forward – and sits at the table when decisions are made.\n\nThe difference isn't just cultural. It's structural: those who see finance as a control function get controllers. Those who see it as a strategic sparring partner get decision support.\n\nIn practice, that means less reporting, more scenarios. Less history, more foresight." }
+  },
+  {
+    tag: "Organisation", date: "Apr 2026",
+    title: { de: "Aufbauorganisation im Scale-up: Wann ist der richtige Zeitpunkt?", en: "Org design in a scale-up: When is the right moment?" },
+    body:  { de: "Struktur zu früh kostet Agilität. Zu spät kostet Kontrolle. Wo liegt die richtige Balance?\n\nDie Antwort ist unbefriedigend präzise: Es kommt darauf an. Auf die Wachstumsgeschwindigkeit, auf die Komplexität der Produkte, auf die Reife der Führungsebene.\n\nWas ich in der Praxis gelernt habe: Die meisten Scale-ups bauen Struktur zu spät. Der Trick liegt darin, Struktur so einzuführen, dass sie wie Klarheit wirkt, nicht wie Kontrolle.", en: "Structure too early costs agility. Too late costs control. Where's the right balance?\n\nThe answer is frustratingly precise: it depends. On the growth rate, the product complexity, the maturity of the leadership team.\n\nWhat I've learned in practice: most scale-ups build structure too late. The trick is introducing structure so it feels like clarity, not control." }
   }
-})();
+];
+
+// ── Language ──────────────────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('hm_lang') || 'de';
+
+function toggleLang() {
+  currentLang = currentLang === 'de' ? 'en' : 'de';
+  localStorage.setItem('hm_lang', currentLang);
+  applyLang();
+}
+
+function applyLang() {
+  document.getElementById('langToggle').textContent = currentLang === 'de' ? 'EN' : 'DE';
+  document.querySelectorAll('[data-de]').forEach(el => {
+    const val = el.getAttribute('data-' + currentLang);
+    if (val) el.textContent = val;
+  });
+}
+
+// ── Pages ─────────────────────────────────────────────────────────────────────
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+function scrollTo(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 100);
+}
+
+// ── Blog ──────────────────────────────────────────────────────────────────────
+function showPost(idx) {
+  const list = document.getElementById('blogList');
+  const post = document.getElementById('blogPost');
+  if (idx === -1) {
+    list.style.display = ''; post.classList.remove('active'); return;
+  }
+  const p = blogPosts[idx];
+  document.getElementById('postTag').textContent   = p.tag;
+  document.getElementById('postDate').textContent  = p.date;
+  document.getElementById('postTitle').textContent = p.title[currentLang];
+  document.getElementById('postBody').textContent  = p.body[currentLang];
+  list.style.display = 'none';
+  post.classList.add('active');
+}
+
+// ── Mobile menu ───────────────────────────────────────────────────────────────
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── Ticker ────────────────────────────────────────────────────────────────────
+function buildTicker(id, items) {
+  const track = document.getElementById(id);
+  const doubled = [...items, ...items];
+  track.innerHTML = doubled.map(i => `<span class="ticker-item">${i}</span>`).join('');
+}
+
+// ── Cookie ────────────────────────────────────────────────────────────────────
+function cookieAccept() {
+  localStorage.setItem('hm_cookie', 'accepted');
+  document.getElementById('cookieBanner').classList.add('hidden');
+  initGA();
+}
+
+function cookieDecline() {
+  localStorage.setItem('hm_cookie', 'declined');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+
+function checkCookie() {
+  const stored = localStorage.getItem('hm_cookie');
+  if (stored === 'accepted') { document.getElementById('cookieBanner').classList.add('hidden'); initGA(); }
+  if (stored === 'declined') { document.getElementById('cookieBanner').classList.add('hidden'); }
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildTicker('tickerVentures',  ventures);
+  buildTicker('tickerInvestors', investors);
+  applyLang();
+  checkCookie();
+});
 </script>
+
 </body>
 </html>
