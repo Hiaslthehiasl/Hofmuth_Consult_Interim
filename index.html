@@ -326,43 +326,43 @@ img { max-width: 100%; }
 </head>
 <body>
 
-<!-- ── Cookie Banner ──────────────────────────────────────────────────────── -->
-<div class="cookie-banner" id="cookieBanner">
-  <p id="cookieText">
-    Diese Website verwendet Google Analytics zur Analyse der Nutzung. Mehr dazu in der <a href="#" onclick="showPage('datenschutz'); return false;" id="cookieDsLink">Datenschutzerklärung</a>.
-  </p>
-  <div class="cookie-buttons">
-    <button class="cookie-decline" onclick="cookieDecline()" id="cookieDeclineBtn">Ablehnen</button>
-    <button class="cookie-accept"  onclick="cookieAccept()"  id="cookieAcceptBtn">Akzeptieren</button>
-  </div>
-</div>
-
-<!-- ── Nav ────────────────────────────────────────────────────────────────── -->
-<div class="nav" role="navigation">
-  <div class="nav-inner">
-    <span class="nav-logo" onclick="showPage('home')">Hofmuth</span>
-    <ul class="nav-links">
-      <li><a href="#" onclick="showPage('home'); scrollTo('leistungen'); return false;" data-de="Leistungen" data-en="Services">Leistungen</a></li>
-      <li><a href="#" onclick="showPage('home'); scrollTo('referenzen'); return false;" data-de="Referenzen" data-en="References">Referenzen</a></li>
-      <li><a href="#" onclick="showPage('partner'); return false;" data-de="Partner" data-en="Partners">Partner</a></li>
-      <li><a href="#" onclick="showPage('blog'); return false;" data-de="Blog" data-en="Blog">Blog</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="nav-lang" onclick="toggleLang()" id="langToggle" aria-label="Sprache wechseln">EN</button>
-      <a class="nav-cta" href="#" onclick="showPage('home'); setTimeout(()=>document.getElementById('calendly').scrollIntoView({behavior:'smooth'}),100); return false;" data-de="Kontakt" data-en="Contact">Kontakt</a>
-      <button class="hamburger" onclick="toggleMobile()" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p id="cookieText">
+      Diese Website verwendet Google Analytics zur Analyse der Nutzung. Mehr dazu in der <a href="#" id="cookieDsLink">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button class="cookie-decline" id="cookieDeclineBtn">Ablehnen</button>
+      <button class="cookie-accept"  id="cookieAcceptBtn">Akzeptieren</button>
     </div>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-link" onclick="showPage('home'); toggleMobile();" data-de="Home" data-en="Home">Home</div>
-    <div class="mobile-link" onclick="showPage('home'); toggleMobile(); scrollTo('leistungen');" data-de="Leistungen" data-en="Services">Leistungen</div>
-    <div class="mobile-link" onclick="showPage('home'); toggleMobile(); scrollTo('referenzen');" data-de="Referenzen" data-en="References">Referenzen</div>
-    <div class="mobile-link" onclick="showPage('partner'); toggleMobile();" data-de="Partner" data-en="Partners">Partner</div>
-    <div class="mobile-link" onclick="showPage('blog'); toggleMobile();" data-de="Blog" data-en="Blog">Blog</div>
+
+  <!-- Nav -->
+  <div class="nav" role="navigation">
+    <div class="nav-inner">
+      <span class="nav-logo" id="navLogo">Hofmuth</span>
+      <ul class="nav-links">
+        <li><a href="#" data-page="home" data-scroll="leistungen" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+        <li><a href="#" data-page="home" data-scroll="referenzen" data-de="Referenzen" data-en="References">Referenzen</a></li>
+        <li><a href="#" data-page="partner" data-de="Partner" data-en="Partners">Partner</a></li>
+        <li><a href="#" data-page="blog" data-de="Blog" data-en="Blog">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-lang" id="langToggle" aria-label="Sprache wechseln">EN</button>
+        <a class="nav-cta" href="#" id="navCta" data-de="Kontakt" data-en="Contact">Kontakt</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-link" data-page="home" data-de="Home" data-en="Home">Home</div>
+      <div class="mobile-link" data-page="home" data-scroll="leistungen" data-de="Leistungen" data-en="Services">Leistungen</div>
+      <div class="mobile-link" data-page="home" data-scroll="referenzen" data-de="Referenzen" data-en="References">Referenzen</div>
+      <div class="mobile-link" data-page="partner" data-de="Partner" data-en="Partners">Partner</div>
+      <div class="mobile-link" data-page="blog" data-de="Blog" data-en="Blog">Blog</div>
+    </div>
   </div>
-</div>
 
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <!-- HOME PAGE                                                                   -->
@@ -386,7 +386,7 @@ img { max-width: 100%; }
       <span class="pill"        data-de="People Analytics"      data-en="People Analytics">People Analytics</span>
       <span class="pill"        data-de="AI"                    data-en="AI">AI</span>
     </div>
-    <a class="btn" href="#" onclick="document.getElementById('calendly').scrollIntoView({behavior:'smooth'}); return false;" data-de="Erstgespräch vereinbaren" data-en="Book a call">Erstgespräch vereinbaren</a>
+    <a class="btn" href="#" id="heroCta" data-de="Erstgespräch vereinbaren" data-en="Book a call">Erstgespräch vereinbaren</a>
   </div>
 
   <!-- KPIs -->
@@ -514,7 +514,7 @@ img { max-width: 100%; }
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <div id="page-partner" class="page">
   <div class="section">
-    <button class="blog-back" onclick="showPage('home')" data-de="← Zurück" data-en="← Back">← Zurück</button>
+    <button class="blog-back" id="partnerBack" data-de="← Zurück" data-en="← Back">← Zurück</button>
     <p class="sec-label" data-de="Netzwerk & Partner" data-en="Network & Partners">Netzwerk & Partner</p>
     <p style="font-size:14px; color:#666; margin-bottom:2rem; line-height:1.7;" data-de="Für komplexe Mandate arbeite ich mit einem Netzwerk aus spezialisierten Partnern zusammen." data-en="For complex mandates, I work with a network of specialised partners.">
       Für komplexe Mandate arbeite ich mit einem Netzwerk aus spezialisierten Partnern zusammen.
@@ -544,10 +544,10 @@ img { max-width: 100%; }
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <div id="page-blog" class="page">
   <div class="section">
-    <button class="blog-back" onclick="showPage('home')" data-de="← Zurück" data-en="← Back">← Zurück</button>
+    <button class="blog-back" id="blogBack" data-de="← Zurück" data-en="← Back">← Zurück</button>
     <p class="sec-label" data-de="Blog" data-en="Blog">Blog</p>
     <div id="blogList">
-      <div class="blog-row" onclick="showPost(0)">
+      <div class="blog-row" data-post="0">
         <div>
           <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
             <span class="blog-tag">People</span>
@@ -558,7 +558,7 @@ img { max-width: 100%; }
         </div>
         <span class="blog-arrow">→</span>
       </div>
-      <div class="blog-row" onclick="showPost(1)">
+      <div class="blog-row" data-post="1">
         <div>
           <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
             <span class="blog-tag">Finance</span>
@@ -569,7 +569,7 @@ img { max-width: 100%; }
         </div>
         <span class="blog-arrow">→</span>
       </div>
-      <div class="blog-row" onclick="showPost(2)">
+      <div class="blog-row" data-post="2">
         <div>
           <div style="display:flex; gap:12px; align-items:center; margin-bottom:0.5rem;">
             <span class="blog-tag">Organisation</span>
@@ -582,7 +582,7 @@ img { max-width: 100%; }
       </div>
     </div>
     <div id="blogPost" class="blog-post">
-      <button class="blog-back" onclick="showPost(-1)" data-de="← Zurück" data-en="← Back">← Zurück</button>
+      <button class="blog-back" id="postBack" data-de="← Zurück" data-en="← Back">← Zurück</button>
       <span class="blog-post-tag" id="postTag"></span>
       <h1 class="blog-post-title" id="postTitle"></h1>
       <span class="blog-post-date" id="postDate"></span>
@@ -596,7 +596,7 @@ img { max-width: 100%; }
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <div id="page-impressum" class="page">
   <div class="section">
-    <button class="blog-back" onclick="showPage('home')">← Zurück</button>
+    <button class="blog-back" id="impressumBack">← Zurück</button>
     <h1 style="font-size:28px; font-weight:700; letter-spacing:-0.03em; margin-bottom:2rem;">Impressum</h1>
     <div style="font-size:14px; line-height:1.8; color:#333; max-width:600px;">
       <p style="font-weight:600; margin-bottom:0.25rem;">Angaben gemäß § 5 TMG</p>
@@ -626,7 +626,7 @@ img { max-width: 100%; }
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <div id="page-datenschutz" class="page">
   <div class="section">
-    <button class="blog-back" onclick="showPage('home')">← Zurück</button>
+    <button class="blog-back" id="datenschutzBack">← Zurück</button>
     <h1 style="font-size:28px; font-weight:700; letter-spacing:-0.03em; margin-bottom:2rem;">Datenschutzerklärung</h1>
     <div style="font-size:14px; line-height:1.8; color:#333; max-width:600px;">
       <h2 style="font-size:16px; font-weight:700; margin:1.5rem 0 0.5rem;">1. Verantwortlicher</h2>
@@ -649,8 +649,8 @@ img { max-width: 100%; }
   <div class="footer-inner">
     <span class="footer-copy">© 2026 Dr. Matthias Hofmuth · Hofmuth: Consult &amp; Interim</span>
     <div class="footer-links">
-      <a href="#" onclick="showPage('impressum'); return false;" data-de="Impressum" data-en="Legal Notice">Impressum</a>
-      <a href="#" onclick="showPage('datenschutz'); return false;" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+      <a href="#" id="footerImpressum" data-de="Impressum" data-en="Legal Notice">Impressum</a>
+      <a href="#" id="footerDatenschutz" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
       <a href="https://linkedin.com/in/matthias-hofmuth" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </div>
@@ -658,117 +658,156 @@ img { max-width: 100%; }
 
 <!-- ── JavaScript ──────────────────────────────────────────────────────────── -->
 <script>
-// ── Data ──────────────────────────────────────────────────────────────────────
-const ventures  = ["Flix","xentral","Temedica","Joby","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up","Sono Motors","DKB"];
-const investors = ["Sequoia","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic","Visionaries Club"];
+// ── HM App Module ─────────────────────────────────────────────────────────────
+const HM = (() => {
 
-const blogPosts = [
-  {
-    tag: "People", date: "Jun 2026",
-    title: { de: "Hiring in der Krise: Was Founder falsch machen", en: "Hiring in a crisis: What founders get wrong" },
-    body:  { de: "Wenn das Wachstum stockt, ist Hiring das erste was gestrichen wird – und das erste was fehlt wenn es wieder anzieht.\n\nDas Muster ist so konsistent, dass man es fast als Naturgesetz bezeichnen könnte. Unternehmen, die in der Krise zu aggressiv abbauen, zahlen auf dem Weg nach oben das Dreifache: höhere Gehälter für knappes Talent, längere Time-to-Hire, und den Verlust von institutionellem Wissen.\n\nDie Lehre daraus ist keine Aufforderung, blind weiterzuhiren. Sie ist eine Aufforderung, strategisch zu denken – welche Rollen sind strukturell notwendig, welche sind Nice-to-have.", en: "When growth stalls, hiring is the first thing cut – and the first thing missing when it picks back up.\n\nThe pattern is so consistent it might as well be a law of nature. Companies that cut too aggressively in a downturn pay triple on the way back up: higher salaries for scarce talent, longer time-to-hire, and the loss of institutional knowledge.\n\nThe lesson isn't a call to keep hiring blindly. It's a call to think strategically – which roles are structurally necessary, which are nice-to-have." }
-  },
-  {
-    tag: "Finance", date: "Mai 2026",
-    title: { de: "Finance als Business Partner: Was das wirklich bedeutet", en: "Finance as Business Partner: What it really means" },
-    body:  { de: "Die meisten CFOs berichten nach hinten. Echtes Business Partnering schaut nach vorne – und sitzt am Tisch wenn Entscheidungen fallen.\n\nDer Unterschied ist nicht nur ein kultureller. Er ist strukturell: Wer Finance als Kontrollorgan begreift, bekommt Controller. Wer Finance als strategischen Sparringspartner begreift, bekommt Entscheidungsunterstützung.\n\nIn der Praxis bedeutet das: weniger Reporting, mehr Szenarien. Weniger Vergangenheit, mehr Vorausschau.", en: "Most CFOs report backwards. Real business partnering looks forward – and sits at the table when decisions are made.\n\nThe difference isn't just cultural. It's structural: those who see finance as a control function get controllers. Those who see it as a strategic sparring partner get decision support.\n\nIn practice, that means less reporting, more scenarios. Less history, more foresight." }
-  },
-  {
-    tag: "Organisation", date: "Apr 2026",
-    title: { de: "Aufbauorganisation im Scale-up: Wann ist der richtige Zeitpunkt?", en: "Org design in a scale-up: When is the right moment?" },
-    body:  { de: "Struktur zu früh kostet Agilität. Zu spät kostet Kontrolle. Wo liegt die richtige Balance?\n\nDie Antwort ist unbefriedigend präzise: Es kommt darauf an. Auf die Wachstumsgeschwindigkeit, auf die Komplexität der Produkte, auf die Reife der Führungsebene.\n\nWas ich in der Praxis gelernt habe: Die meisten Scale-ups bauen Struktur zu spät. Der Trick liegt darin, Struktur so einzuführen, dass sie wie Klarheit wirkt, nicht wie Kontrolle.", en: "Structure too early costs agility. Too late costs control. Where's the right balance?\n\nThe answer is frustratingly precise: it depends. On the growth rate, the product complexity, the maturity of the leadership team.\n\nWhat I've learned in practice: most scale-ups build structure too late. The trick is introducing structure so it feels like clarity, not control." }
+  const ventures  = ["Flix","xentral","Temedica","Joby","Wandelbots","Sereact","therabee","Clevis","Metronomia","Landwärme","Stat-Up","Sono Motors","DKB"];
+  const investors = ["Sequoia","Tiger Global","MIG","Athos","Freigeist Capital","Silverlake","General Atlantic","Visionaries Club"];
+
+  const blogPosts = [
+    {
+      tag: "People", date: "Jun 2026",
+      title: { de: "Hiring in der Krise: Was Founder falsch machen", en: "Hiring in a crisis: What founders get wrong" },
+      body:  { de: "Wenn das Wachstum stockt, ist Hiring das erste was gestrichen wird – und das erste was fehlt wenn es wieder anzieht.\n\nDas Muster ist so konsistent, dass man es fast als Naturgesetz bezeichnen könnte. Unternehmen, die in der Krise zu aggressiv abbauen, zahlen auf dem Weg nach oben das Dreifache: höhere Gehälter für knappes Talent, längere Time-to-Hire, und den Verlust von institutionellem Wissen.\n\nDie Lehre daraus ist keine Aufforderung, blind weiterzuhiren. Sie ist eine Aufforderung, strategisch zu denken – welche Rollen sind strukturell notwendig, welche sind Nice-to-have.", en: "When growth stalls, hiring is the first thing cut – and the first thing missing when it picks back up.\n\nThe pattern is so consistent it might as well be a law of nature. Companies that cut too aggressively in a downturn pay triple on the way back up: higher salaries for scarce talent, longer time-to-hire, and the loss of institutional knowledge.\n\nThe lesson isn't a call to keep hiring blindly. It's a call to think strategically – which roles are structurally necessary, which are nice-to-have." }
+    },
+    {
+      tag: "Finance", date: "Mai 2026",
+      title: { de: "Finance als Business Partner: Was das wirklich bedeutet", en: "Finance as Business Partner: What it really means" },
+      body:  { de: "Die meisten CFOs berichten nach hinten. Echtes Business Partnering schaut nach vorne – und sitzt am Tisch wenn Entscheidungen fallen.\n\nDer Unterschied ist nicht nur ein kultureller. Er ist strukturell: Wer Finance als Kontrollorgan begreift, bekommt Controller. Wer Finance als strategischen Sparringspartner begreift, bekommt Entscheidungsunterstützung.\n\nIn der Praxis bedeutet das: weniger Reporting, mehr Szenarien. Weniger Vergangenheit, mehr Vorausschau.", en: "Most CFOs report backwards. Real business partnering looks forward – and sits at the table when decisions are made.\n\nThe difference isn't just cultural. It's structural: those who see finance as a control function get controllers. Those who see it as a strategic sparring partner get decision support.\n\nIn practice, that means less reporting, more scenarios. Less history, more foresight." }
+    },
+    {
+      tag: "Organisation", date: "Apr 2026",
+      title: { de: "Aufbauorganisation im Scale-up: Wann ist der richtige Zeitpunkt?", en: "Org design in a scale-up: When is the right moment?" },
+      body:  { de: "Struktur zu früh kostet Agilität. Zu spät kostet Kontrolle. Wo liegt die richtige Balance?\n\nDie Antwort ist unbefriedigend präzise: Es kommt darauf an. Auf die Wachstumsgeschwindigkeit, auf die Komplexität der Produkte, auf die Reife der Führungsebene.\n\nWas ich in der Praxis gelernt habe: Die meisten Scale-ups bauen Struktur zu spät. Der Trick liegt darin, Struktur so einzuführen, dass sie wie Klarheit wirkt, nicht wie Kontrolle.", en: "Structure too early costs agility. Too late costs control. Where's the right balance?\n\nThe answer is frustratingly precise: it depends. On the growth rate, the product complexity, the maturity of the leadership team.\n\nWhat I've learned in practice: most scale-ups build structure too late. The trick is introducing structure so it feels like clarity, not control." }
+    }
+  ];
+
+  let currentLang = localStorage.getItem('hm_lang') || 'de';
+
+  function toggleLang() {
+    currentLang = currentLang === 'de' ? 'en' : 'de';
+    localStorage.setItem('hm_lang', currentLang);
+    applyLang();
   }
-];
 
-// ── Language ──────────────────────────────────────────────────────────────────
-let currentLang = localStorage.getItem('hm_lang') || 'de';
-
-function toggleLang() {
-  currentLang = currentLang === 'de' ? 'en' : 'de';
-  localStorage.setItem('hm_lang', currentLang);
-  applyLang();
-}
-
-function applyLang() {
-  document.documentElement.setAttribute('lang', currentLang);
-  document.getElementById('langToggle').textContent = currentLang === 'de' ? 'EN' : 'DE';
-  document.querySelectorAll('[data-de]').forEach(el => {
-    const val = el.getAttribute('data-' + currentLang);
-    if (val) el.textContent = val;
-  });
-}
-
-// ── Pages ─────────────────────────────────────────────────────────────────────
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.getElementById('mobileMenu').classList.remove('open');
-}
-
-function scrollTo(id) {
-  setTimeout(() => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }, 100);
-}
-
-// ── Blog ──────────────────────────────────────────────────────────────────────
-function showPost(idx) {
-  const list = document.getElementById('blogList');
-  const post = document.getElementById('blogPost');
-  if (idx === -1) {
-    list.style.display = ''; post.classList.remove('active'); return;
+  function applyLang() {
+    document.documentElement.setAttribute('lang', currentLang);
+    document.getElementById('langToggle').textContent = currentLang === 'de' ? 'EN' : 'DE';
+    document.querySelectorAll('[data-de]').forEach(el => {
+      const val = el.getAttribute('data-' + currentLang);
+      if (val) el.textContent = val;
+    });
   }
-  const p = blogPosts[idx];
-  document.getElementById('postTag').textContent   = p.tag;
-  document.getElementById('postDate').textContent  = p.date;
-  document.getElementById('postTitle').textContent = p.title[currentLang];
-  document.getElementById('postBody').textContent  = p.body[currentLang];
-  list.style.display = 'none';
-  post.classList.add('active');
-}
 
-// ── Mobile menu ───────────────────────────────────────────────────────────────
-function toggleMobile() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
 
-// ── Ticker ────────────────────────────────────────────────────────────────────
-function buildTicker(id, items) {
-  const track = document.getElementById(id);
-  // Repeat items enough times to fill well beyond viewport width, then double for seamless loop
-  const repeated = [];
-  for (let i = 0; i < 6; i++) repeated.push(...items);
-  const doubled = [...repeated, ...repeated];
-  track.innerHTML = doubled.map(i => `<span class="ticker-item">${i}</span>`).join('');
-}
+  function scrollToSection(id) {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
 
-// ── Cookie ────────────────────────────────────────────────────────────────────
-function cookieAccept() {
-  localStorage.setItem('hm_cookie', 'accepted');
-  document.getElementById('cookieBanner').classList.add('hidden');
-  initGA();
-}
+  function showPost(idx) {
+    const list = document.getElementById('blogList');
+    const post = document.getElementById('blogPost');
+    if (idx === -1) {
+      list.style.display = '';
+      post.classList.remove('active');
+      return;
+    }
+    const p = blogPosts[idx];
+    document.getElementById('postTag').textContent   = p.tag;
+    document.getElementById('postDate').textContent  = p.date;
+    document.getElementById('postTitle').textContent = p.title[currentLang];
+    document.getElementById('postBody').textContent  = p.body[currentLang];
+    list.style.display = 'none';
+    post.classList.add('active');
+  }
 
-function cookieDecline() {
-  localStorage.setItem('hm_cookie', 'declined');
-  document.getElementById('cookieBanner').classList.add('hidden');
-}
+  function buildTicker(id, items) {
+    const track = document.getElementById(id);
+    const repeated = [];
+    for (let i = 0; i < 6; i++) repeated.push(...items);
+    const doubled = [...repeated, ...repeated];
+    track.innerHTML = doubled.map(item => `<span class="ticker-item">${item}</span>`).join('');
+  }
 
-function checkCookie() {
-  const stored = localStorage.getItem('hm_cookie');
-  if (stored === 'accepted') { document.getElementById('cookieBanner').classList.add('hidden'); initGA(); }
-  if (stored === 'declined') { document.getElementById('cookieBanner').classList.add('hidden'); }
-}
+  function cookieAccept() {
+    localStorage.setItem('hm_cookie', 'accepted');
+    document.getElementById('cookieBanner').classList.add('hidden');
+    initGA();
+  }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  buildTicker('tickerVentures',  ventures);
-  buildTicker('tickerInvestors', investors);
-  applyLang();
-  checkCookie();
-});
+  function cookieDecline() {
+    localStorage.setItem('hm_cookie', 'declined');
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+
+  function checkCookie() {
+    const stored = localStorage.getItem('hm_cookie');
+    if (stored === 'accepted') { document.getElementById('cookieBanner').classList.add('hidden'); initGA(); }
+    if (stored === 'declined') { document.getElementById('cookieBanner').classList.add('hidden'); }
+  }
+
+  function bindEvents() {
+    document.getElementById('langToggle').addEventListener('click', toggleLang);
+    document.getElementById('navLogo').addEventListener('click', () => showPage('home'));
+    document.getElementById('navCta').addEventListener('click', e => {
+      e.preventDefault(); showPage('home'); scrollToSection('calendly');
+    });
+    document.getElementById('heroCta').addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('calendly').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.querySelectorAll('.nav-links a, .mobile-link').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const page   = el.getAttribute('data-page');
+        const scroll = el.getAttribute('data-scroll');
+        if (page) showPage(page);
+        if (scroll) scrollToSection(scroll);
+        document.getElementById('mobileMenu').classList.remove('open');
+      });
+    });
+    document.getElementById('hamburgerBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+    document.getElementById('cookieAcceptBtn').addEventListener('click', cookieAccept);
+    document.getElementById('cookieDeclineBtn').addEventListener('click', cookieDecline);
+    document.getElementById('cookieDsLink').addEventListener('click', e => {
+      e.preventDefault(); showPage('datenschutz');
+    });
+    document.getElementById('partnerBack').addEventListener('click',    () => showPage('home'));
+    document.getElementById('blogBack').addEventListener('click',       () => showPage('home'));
+    document.getElementById('postBack').addEventListener('click',       () => showPost(-1));
+    document.getElementById('impressumBack').addEventListener('click',  () => showPage('home'));
+    document.getElementById('datenschutzBack').addEventListener('click',() => showPage('home'));
+    document.querySelectorAll('.blog-row[data-post]').forEach(row => {
+      row.addEventListener('click', () => showPost(parseInt(row.getAttribute('data-post'))));
+    });
+    document.getElementById('footerImpressum').addEventListener('click',   e => { e.preventDefault(); showPage('impressum'); });
+    document.getElementById('footerDatenschutz').addEventListener('click', e => { e.preventDefault(); showPage('datenschutz'); });
+  }
+
+  function init() {
+    buildTicker('tickerVentures',  ventures);
+    buildTicker('tickerInvestors', investors);
+    applyLang();
+    checkCookie();
+    bindEvents();
+  }
+
+  return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', HM.init);
+
 </script>
 
 </body>
