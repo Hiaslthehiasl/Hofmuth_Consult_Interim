@@ -33,18 +33,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XCS8ZG85Q"></script>
+  <!-- Google Analytics 4 – loaded dynamically after cookie consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    // Only fire after consent
     window._ga_consent = false;
     function initGA() {
       if (window._ga_consent) return;
       window._ga_consent = true;
-      gtag('config', 'G-9XCS8ZG85Q', { anonymize_ip: true });
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9XCS8ZG85Q';
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-9XCS8ZG85Q', { anonymize_ip: true });
+      };
     }
   </script>
 
@@ -344,7 +348,7 @@ img { max-width: 100%; }
       <li><a href="#" onclick="showPage('blog'); return false;" data-de="Blog" data-en="Blog">Blog</a></li>
     </ul>
     <div class="nav-right">
-      <span class="nav-lang" onclick="toggleLang()" id="langToggle">EN</span>
+      <button class="nav-lang" onclick="toggleLang()" id="langToggle" aria-label="Sprache wechseln">EN</button>
       <a class="nav-cta" href="#" onclick="showPage('home'); setTimeout(()=>document.getElementById('calendly').scrollIntoView({behavior:'smooth'}),100); return false;" data-de="Kontakt" data-en="Contact">Kontakt</a>
       <button class="hamburger" onclick="toggleMobile()" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -363,7 +367,7 @@ img { max-width: 100%; }
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <!-- HOME PAGE                                                                   -->
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
-<div id="page-home" class="page active">
+<div id="page-home" class="page active" role="main">
 
   <!-- Hero -->
   <div class="hero">
@@ -476,7 +480,7 @@ img { max-width: 100%; }
     <p class="sec-label" data-de="Profil" data-en="Profile">Profil</p>
     <div class="profile-grid">
       <div class="profile-photo">
-        <img src="foto.jpg" alt="Dr. Matthias Hofmuth">
+        <img src="foto.jpg" alt="Dr. Matthias Hofmuth" width="160" height="213" loading="lazy">
       </div>
       <div>
         <span class="profile-name">Dr. Matthias Hofmuth</span>
@@ -580,7 +584,7 @@ img { max-width: 100%; }
     <div id="blogPost" class="blog-post">
       <button class="blog-back" onclick="showPost(-1)" data-de="← Zurück" data-en="← Back">← Zurück</button>
       <span class="blog-post-tag" id="postTag"></span>
-      <h2 class="blog-post-title" id="postTitle"></h2>
+      <h1 class="blog-post-title" id="postTitle"></h1>
       <span class="blog-post-date" id="postDate"></span>
       <p class="blog-post-body" id="postBody"></p>
     </div>
@@ -686,6 +690,7 @@ function toggleLang() {
 }
 
 function applyLang() {
+  document.documentElement.setAttribute('lang', currentLang);
   document.getElementById('langToggle').textContent = currentLang === 'de' ? 'EN' : 'DE';
   document.querySelectorAll('[data-de]').forEach(el => {
     const val = el.getAttribute('data-' + currentLang);
