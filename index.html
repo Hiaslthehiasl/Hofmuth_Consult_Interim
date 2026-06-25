@@ -213,9 +213,10 @@ img { max-width: 100%; }
 .mode-tag { font-size: 12px; color: #666; display: block; padding: 2px 0; }
 
 /* ── Ticker ───────────────────────────────────────────────────────────────── */
-.ticker-section { padding: 2.25rem 0; border-bottom: 0.5px solid var(--border); overflow: hidden; }
-.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding: 0 2rem; max-width: var(--max-w); margin-left: auto; margin-right: auto; }
-.ticker-wrap { overflow: hidden; }
+.ticker-section { padding: 2.25rem 0; border-bottom: 0.5px solid var(--border); }
+.ticker-outer { max-width: var(--max-w); margin: 0 auto; overflow: hidden; }
+.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding: 0 2rem; }
+.ticker-wrap { overflow: hidden; padding: 0 2rem; }
 .ticker-track {
   display: inline-flex; gap: 10px; white-space: nowrap;
   will-change: transform;
@@ -458,13 +459,15 @@ img { max-width: 100%; }
 
   <!-- Referenzen / Ticker -->
   <div class="ticker-section" id="referenzen">
-    <p class="ticker-label" data-de="Ventures" data-en="Ventures">Ventures</p>
-    <div class="ticker-wrap">
-      <div class="ticker-track t1" id="tickerVentures"></div>
-    </div>
-    <p class="ticker-label" style="margin-top:1.5rem" data-de="Investoren" data-en="Investors">Investoren</p>
-    <div class="ticker-wrap">
-      <div class="ticker-track t2" id="tickerInvestors"></div>
+    <div class="ticker-outer">
+      <p class="ticker-label" data-de="Ventures" data-en="Ventures">Ventures</p>
+      <div class="ticker-wrap">
+        <div class="ticker-track t1" id="tickerVentures"></div>
+      </div>
+      <p class="ticker-label" style="margin-top:1.5rem" data-de="Investoren" data-en="Investors">Investoren</p>
+      <div class="ticker-wrap">
+        <div class="ticker-track t2" id="tickerInvestors"></div>
+      </div>
     </div>
   </div>
 
@@ -729,7 +732,10 @@ function toggleMobile() {
 // ── Ticker ────────────────────────────────────────────────────────────────────
 function buildTicker(id, items) {
   const track = document.getElementById(id);
-  const doubled = [...items, ...items];
+  // Repeat items enough times to fill well beyond viewport width, then double for seamless loop
+  const repeated = [];
+  for (let i = 0; i < 6; i++) repeated.push(...items);
+  const doubled = [...repeated, ...repeated];
   track.innerHTML = doubled.map(i => `<span class="ticker-item">${i}</span>`).join('');
 }
 
