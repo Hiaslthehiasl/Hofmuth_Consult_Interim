@@ -191,6 +191,8 @@ img { max-width: 100%; }
   display: grid; grid-template-columns: repeat(5, 1fr);
   border-bottom: 0.5px solid var(--border);
   max-width: var(--max-w); margin: 0 auto;
+  border-left: 0.5px solid var(--border);
+  border-right: 0.5px solid var(--border);
 }
 .kpi { padding: 1.75rem 1.5rem; border-right: 0.5px solid var(--border); text-align: center; }
 .kpi:last-child { border-right: none; }
@@ -211,15 +213,15 @@ img { max-width: 100%; }
 .mode-tag { font-size: 12px; color: #666; display: block; padding: 2px 0; }
 
 /* ── Ticker ───────────────────────────────────────────────────────────────── */
-.ticker-section { padding: 2.25rem 0; border-bottom: 0.5px solid var(--border); max-width: 100%; overflow: hidden; }
-.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding: 0 2rem; }
+.ticker-section { padding: 2.25rem 0; border-bottom: 0.5px solid var(--border); overflow: hidden; }
+.ticker-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding: 0 2rem; max-width: var(--max-w); margin-left: auto; margin-right: auto; }
 .ticker-wrap { overflow: hidden; }
 .ticker-track {
-  display: flex; gap: 10px; white-space: nowrap;
+  display: inline-flex; gap: 10px; white-space: nowrap;
   will-change: transform;
 }
-.ticker-track.t1 { animation: tick 275s linear infinite; }
-.ticker-track.t2 { animation: tick 245s linear infinite; }
+.ticker-track.t1 { animation: tick 40s linear infinite; }
+.ticker-track.t2 { animation: tick 55s linear infinite; }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker-item { font-size: 13px; font-weight: 500; padding: 5px 14px; border-radius: 6px; border: 0.5px solid #E0E0E0; color: #444; background: #FAFAFA; flex-shrink: 0; }
 
@@ -471,7 +473,7 @@ img { max-width: 100%; }
     <p class="sec-label" data-de="Profil" data-en="Profile">Profil</p>
     <div class="profile-grid">
       <div class="profile-photo">
-        <span data-de="Foto folgt" data-en="Photo soon">Foto folgt</span>
+        <img src="foto.jpg" alt="Dr. Matthias Hofmuth">
       </div>
       <div>
         <span class="profile-name">Dr. Matthias Hofmuth</span>
